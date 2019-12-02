@@ -1,82 +1,4 @@
-<!-- <p>
-  driver-form works!
-</p> -->
-  <!-- <form (ngSubmit)="onSubmitForm()" #loginForm="ngForm" class="text-center  from-horizontal">
-    <label>
-      שם משתמש
-      <br>
-      <input class="form-group" name="userName" required [(ngModel)]="myDriver.name" >
-    </label>
-    <br>
-    <label>
-      סיסמה
-      <br>
-      <input type="password" [(ngModel)]="myDriver.password" name="password" #pass="ngModel">
-    </label>
-    <br>
-  <button type="submit" [disabled]="loginForm.invalid">כניסה</button>
-</form>
-<div class="alert alert-danger text-center" *ngIf="isShowErrText">{{errText}}</div> -->
-
-
-<!-- <div>
-  <label>שם משתמש</label><br>
-  <input type="text" #driveName>
-  <br>
-  <label>סיסמה</label><br>
-  <input type="text" #drivePassword>
-  <br>
-  <input type="button" value="הוסף" (click)="onAddDrive(driveName,drivePassword)">
-</div> -->
-
-
-
-
-
-<!-- Button to open the modal login form -->
-<!-- <button onclick="document.getElementById('id01').style.display='block'">הוסף נהג</button> -->
-
-<!-- The Modal -->
-<!-- <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" 
-class="close" title="Close Modal">&times;</span> -->
-
-  <!-- Modal Content -->
-  <!-- <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #loginForm="ngForm">
-    <br>
-
-    <div class="container">
-      <label for="uname"><b> שם משתמש  </b></label><br>
-
-      <input type="text" placeholder="הכנס שם משתמש" name="uname" [(ngModel)]="myDriver.name_of_user" required>
-      <br>
-
-      <label for="psw"><b>סיסמה</b></label><br>
-      <input type="password" placeholder="הכנס סיסמה" name="psw" [(ngModel)]="myDriver.users_Id" required>
-<br><br> -->
-<!-- <input type="button" value="הוסף" (click)="onAddDrive(driveName,drivePassword)" onclick="document.getElementById('id01').style.display='none'"> -->
-<!-- <button type="submit" [disabled]="loginForm.invalid" onclick="document.getElementById('id01').style.display='none'">הוסף</button>
-<br> -->
-<!-- <button type="submit">Login</button><br> -->
-      <!-- <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-<br>
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <br>
-
-    </div>
-<br>
-  </form>
-</div> -->
-
-
-
-
-
-<!-- Button to open the modal login form -->
+<!-- Button to open the modal driver form -->
 <button onclick="document.getElementById('id01').style.display='block'">הוסף נהג</button>
 
 <!-- The Modal -->
@@ -85,25 +7,19 @@ class="close" title="Close Modal">&times;</span> -->
 class="close" title="Close Modal">&times;</span>
 
   <!-- Modal Content -->
-  <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #loginForm="ngForm">
+  <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #driverForm="ngForm">
     <br>
 
     <div class="container">
       <label for="uname"><b> שם משתמש  </b></label><br>
 
-      <input type="text" placeholder="הכנס שם משתמש" name="uname" [(ngModel)]="myDriver.name_of_user" required>
+      <input type="text" placeholder="הכנס שם משתמש" name="uname" [(ngModel)]="myDriver.nameOfUser" required>
       <br>
 
       <label for="psw"><b>סיסמה</b></label><br>
-      <input type="password" placeholder="הכנס סיסמה" name="psw" [(ngModel)]="myDriver.users_Id" required>
+      <input type="password" placeholder="הכנס סיסמה" name="psw" [(ngModel)]="myDriver.usersId" required>
 <br><br>
-<!-- <input type="submit" value="הוסף" (click)="onAddDrive(driveName,drivePassword)" onclick="document.getElementById('id01').style.display='none'"> -->
-<!-- <input type="submit" [disabled]="loginForm.invalid" onclick="document.getElementById('id01').style.display='none'">הוסף</input>
-<br> -->
-<!-- <button type="submit">Login</button><br> -->
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+<button type="submit" onclick="document.getElementById('id01').style.display='none'">הוסף</button><br>
     </div>
 <br>
     <div class="container" style="background-color:#f1f1f1">

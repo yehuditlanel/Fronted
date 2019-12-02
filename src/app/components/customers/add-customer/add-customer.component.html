@@ -1,0 +1,31 @@
+<!-- Button to open the modal driver form -->
+<button onclick="document.getElementById('addCustomer').style.display='block'">הוסף לקוח</button>
+
+<!-- The Modal -->
+<div id="addCustomer" class="modal">
+  <span onclick="document.getElementById('addCustomer').style.display='none'" 
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #customerForm="ngForm">
+    <br>
+
+    <div class="container">
+      <label for="groupsCode"><b> קוד קבוצה </b></label><br>
+      <input type="text" placeholder="הכנס  קוד קבוצה" name="groupsCode" [(ngModel)]="newCustomer.Group_s_code" required>
+      <br>
+      <label for="groupsName"><b>שם קבוצה</b></label><br>
+      <input type="text" placeholder="הכנס שם קבוצה" name="groupsName" [(ngModel)]="newCustomer.Group_s_name" required>
+      <br>
+      <label for="conectedsName"><b> שם איש קשר </b></label><br>
+      <input type="text" placeholder="הכנס  שם איש קשר" name="conectedsName" [(ngModel)]="newCustomer.Conected_name" required>
+      <br>
+      <label for="conectedsPhone"><b>  טלפון איש קשר</b></label><br>
+      <input type="text" placeholder="הכנס  טלפון איש קשר" name="conectedsPhone" [(ngModel)]="newCustomer.Conected_phone" required>
+      <br>
+<br>
+<button type="submit" onclick="document.getElementById('addCustomer').style.display='none'">הוסף</button><br>
+    </div>
+<br>
+  </form>
+</div>

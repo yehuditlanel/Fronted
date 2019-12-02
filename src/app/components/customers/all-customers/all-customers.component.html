@@ -1,0 +1,2 @@
+<app-list-customers  *ngFor="let item of customers;let i=index" [customer]="item"></app-list-customers>
+<app-add-customer (addCustomer)="onCustomerAdded($event)"></app-add-customer>

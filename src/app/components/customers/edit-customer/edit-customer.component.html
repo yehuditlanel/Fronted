@@ -1,0 +1,27 @@
+<!-- <p>
+  edit-customer works!
+</p>  -->
+<a routerLink="/customers" onclick="document.getElementById('editCustomer').style.display='block'">עריכה</a>
+<div class="modal" id="editCustomer">
+<form class="modal-content animate"action="/action_page.php" (ngSubmit)="onSubmitForm()" #editForm="ngForm">
+<h1>עריכת לקוח</h1>
+<button type="button" (click)="cancel()" onclick="document.getElementById('editCustomer').style.display='none'" class="cancelbtn">Cancel</button>
+<div class="container">
+<label for="conectedName"><b>  שם איש קשר  </b></label><br>
+<input type="text" name="conectedName" [(ngModel)]="customer.Conected_name" required>
+<br>
+<label for="conectedPhone"><b>טלפון איש קשר</b></label><br>
+<input  name="conectedPhone" [(ngModel)]="customer.Conected_phone" >
+<br>
+<label for="group_s_code"><b>  קוד קבוצה  </b></label><br>
+<input   name="group_s_code" [(ngModel)]="customer.Group_s_code" required>
+<br>
+<label for="group_s_name"><b>שם קבוצה</b></label><br>
+<input  name="group_s_name" [(ngModel)]="customer.Group_s_name" >
+</div>
+<div class="container" style="background-color:#f1f1f1">
+    <br>
+  </div>
+<button type="submit" > אישור</button>
+</form>
+</div>

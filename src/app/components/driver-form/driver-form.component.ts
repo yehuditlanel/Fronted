@@ -10,11 +10,11 @@ import { NgForm } from '@angular/forms';
 export class DriverFormComponent implements OnInit {
   myDriver:User;
 @Output() addDrive=new EventEmitter<User>();
-@ViewChild ("loginForm")form:NgForm
-  constructor() { this.myDriver=new User("",0,"","",0);
-}
+@ViewChild ("driverForm")form:NgForm
+  constructor() { }
   onSubmitForm(form:NgForm){
     this.addDrive.emit(this.myDriver);
+    this.form.reset();
     
   }
 // onAddDrive(users_Id,name_of_user,address_of_user,phone_of_user,permition){
@@ -27,6 +27,7 @@ export class DriverFormComponent implements OnInit {
 //   });
 // }
   ngOnInit() {
+    this.myDriver=new User("",null,"","",null);
   }
 
 }

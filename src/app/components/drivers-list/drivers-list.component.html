@@ -14,12 +14,14 @@
     <tbody>
     <tr>
         <td>
-            {{driver.name_of_user}}
+            {{driver.nameOfUser}}
         </td>
+        
         <td>
-            <a href="/ToDoes/Edit/1">Edit</a> |
-            <a href="/ToDoes/Details/1">Details</a> |
-            <a href="/ToDoes/Delete/1">Delete</a>
+
+            <a routerLink="/drivers"  (click)="updateDriver()">עריכה</a> |
+            <a href="/ToDoes/Details/1">פרטים</a> |
+            <a href="/ToDoes/Delete/1">מחיקה</a>
         </td>
     </tr>
 </tbody></table>

@@ -11,7 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { DriverComponent } from './components/driver/driver.component';
 import { TravelComponent } from './components/travel/travel.component';
 //import { RouterModule, Routes } from '@angular/router';
-import { CustomerComponent } from './components/customer/customer.component';
+import { CustomerComponent } from './components/customers/customer/customer.component';
 import { DriversComponent } from './components/drivers/drivers.component';
 import { DriverFormComponent } from './components/driver-form/driver-form.component';
 import { DriversListComponent } from './components/drivers-list/drivers-list.component';
@@ -19,6 +19,14 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HttpClientModule } from '@angular/common/http';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
+import { ServerService } from './service/server.service';
+import { AllCustomersComponent } from './components/customers/all-customers/all-customers.component';
+import { AddCustomerComponent } from './components/customers/add-customer/add-customer.component';
+import { DetialCustomerComponent } from './components/customers/detial-customer/detial-customer.component';
+import { EditCustomerComponent } from './components/customers/edit-customer/edit-customer.component';
+import { DeleteCustomerComponent } from './components/customers/delete-customer/delete-customer.component';
+import { ListCustomersComponent } from './components/customers/list-customers/list-customers.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,13 +43,19 @@ import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.com
     DriversListComponent,
     PageNotFoundComponent,
    VehiclesComponent,
-    VehicleFormComponent
+    VehicleFormComponent,
+    AllCustomersComponent,
+    AddCustomerComponent,
+    DetialCustomerComponent,
+    EditCustomerComponent,
+    DeleteCustomerComponent,
+    ListCustomersComponent
   ],
   imports: [
     BrowserModule,FormsModule,
-    AppRoutingModule,HttpClientModule
+    AppRoutingModule,HttpClientModule,AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

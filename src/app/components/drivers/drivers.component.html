@@ -8,8 +8,10 @@
 <br><br>
 <button class="btn-primary" [routerLink]="['/drivers']">הוספת לקוח חדש</button>
 <br><br> -->
-<input placeholder="search" [(ngModel)]="searchText">
+<input placeholder="search" [(ngModel)]="searchText"class="form-control container body-content">
+<br>
+
 <!-- <app-drivers-list *ngFor="let item of drives" [drive]="item"></app-drivers-list> -->
 <app-drivers-list *ngFor="let item of drivers" [driver]="item"></app-drivers-list>
-
+<app-drivers-list *ngFor="let item of drivermekomi" [driver]="item"></app-drivers-list>
 <app-driver-form (addDrive)="onDriveAdded($event)"></app-driver-form>

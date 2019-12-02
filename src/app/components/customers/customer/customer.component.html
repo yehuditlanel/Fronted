@@ -1,0 +1,17 @@
+<p>
+  customer works!
+</p>
+<div *ngFor="let c of customers">
+    <p>{{ c.conected_name }}</p>
+    <p>{{c.conected_phone}}</p>
+    <p>{{c.group_s_code}}</p>
+    <p>{{c.group_s_name}}</p>
+</div>
+<ul class="list-group list-group-flush">
+  <li *ngFor="let c of customers" class="list-group-item ">
+    <a routerLink="/vehicle" routerLinkActive="active">עריכה</a> | 
+    <a routerLink="/customer" routerLinkActive="active">מחיקה</a>
+
+  </li>
+</ul>
+

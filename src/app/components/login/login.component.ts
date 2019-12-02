@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     else
     {
       this.errText="go to next page";
-      this.route.navigate(['driver',this.myUser.name_of_user]);
+      this.route.navigate(['driver',this.myUser.nameOfUser]);
     }
     this.form.reset();
     //...
