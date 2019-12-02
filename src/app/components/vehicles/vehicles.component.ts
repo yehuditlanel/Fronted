@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { VehicleService } from 'src/app/service/vehicle.service';
 import { ServerService } from 'src/app/service/server.service';
 import { Vehicle } from 'src/app/classes/Vehicle';
 
@@ -10,16 +9,15 @@ import { Vehicle } from 'src/app/classes/Vehicle';
 })
 export class VehiclesComponent implements OnInit {
 vehicle:Vehicle[]
-  constructor(private vs:VehicleService,private vs1:ServerService) { 
+  constructor(private vs:ServerService) { 
   }
   
   ngOnInit() {
     this.vehicle=[];
-    this.vs1.byGet("http://localhost:55750/api/Vehicle").subscribe(data=>{
+    this.vs.byGet("Vehicle").subscribe(data=>{
       this.vehicle=data;
       console.log(data);
     });
-    //this.vs.addVehicle();
   }
 
 }

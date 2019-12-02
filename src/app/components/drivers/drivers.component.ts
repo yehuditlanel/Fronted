@@ -26,7 +26,7 @@ export class DriversComponent implements OnInit {
   // }
   ngOnInit() {
     this.drivers=[];
-    this.ds.byGet("http://localhost:55750/api/User").subscribe(data => {
+    this.ds.byGet("User").subscribe(data => {
     this.drivers=data;
     console.log(this.drivers);
   });

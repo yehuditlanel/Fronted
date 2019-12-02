@@ -26,7 +26,6 @@ import { DetialCustomerComponent } from './components/customers/detial-customer/
 import { EditCustomerComponent } from './components/customers/edit-customer/edit-customer.component';
 import { DeleteCustomerComponent } from './components/customers/delete-customer/delete-customer.component';
 import { ListCustomersComponent } from './components/customers/list-customers/list-customers.component';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +52,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   ],
   imports: [
     BrowserModule,FormsModule,
-    AppRoutingModule,HttpClientModule,AngularFontAwesomeModule
+    AppRoutingModule,HttpClientModule
   ],
   providers: [ServerService],
   bootstrap: [AppComponent]

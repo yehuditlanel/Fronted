@@ -18,10 +18,10 @@ export class CustomerComponent{
 ngOnInit() {
   this.newCostumer=new Customer("2222","moti","0533132123","fff");
   // this.cs.updateCustomer(this.newCostumer);
-  // this.cs.addObject("http://localhost:55750/api/Customer",this.newCostumer);
-  // this.cs.deleteObject("http://localhost:55750/api/Customer",2222);
+  // this.cs.addObject("Customer",this.newCostumer);
+  // this.cs.deleteObject("Customer",2222);
   //this.cs.addCustomer(this.newCostumer);
-  this.cs.byGet("http://localhost:55750/api/Customer").subscribe(data => {
+  this.cs.byGet("Customer").subscribe(data => {
     this.customers=data;
     console.log(this.customers);
   });

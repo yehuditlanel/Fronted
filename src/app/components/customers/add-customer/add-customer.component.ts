@@ -18,7 +18,7 @@ newCustomer:Customer;
 constructor(private cs:ServerService) { this.newCustomer= new Customer("","","",""); }
   onSubmitForm(form:NgForm){
     this.addCustomer.emit(this.newCustomer);
-    this.cs.addObject("http://localhost:55750/api/Customer",this.newCustomer);
+    this.cs.addObject("Customer",this.newCustomer);
     this.form.reset();
   }
 

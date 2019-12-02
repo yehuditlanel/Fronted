@@ -19,7 +19,7 @@ p(){
 }
   ngOnInit() {
     this.customers=[];
-    this.cs.byGet("http://localhost:55750/api/Customer").subscribe(data => {
+    this.cs.byGet("Customer").subscribe(data => {
     this.customers=data;
     console.log(this.customers);
   });
