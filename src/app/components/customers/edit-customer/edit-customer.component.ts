@@ -27,7 +27,6 @@ customer:Customer=new Customer("vv","vv","vvv","vv");
     console.log(this.customer);
   }
   onSubmitForm(){
-    console.log("jjjkjkjkj")
        this.router.navigate(['/customers']);
    
   }

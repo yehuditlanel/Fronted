@@ -2,9 +2,9 @@
 
 <form >
   
-  <ul class="nav justify-content-fill fixed-top" >
-    <li class="nav-item">
-      <img width="250"  alt="Angular Logo" src="../assets/images/logo.png"></li>
+  <ul class="nav justify-content-fill " >
+   
+      <img width="250"  alt="Angular Logo" src="../assets/images/logo.png">
       <li class="nav-item">
         <br>
         <a class="nav-link" [routerLink]="['/customers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">לקוחות</a>
@@ -22,8 +22,29 @@
             <a class="nav-link" [routerLink]="['/travel']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">נסיעות</a>
           </li>
         <li class="nav-item"></li>
+        <div class="dropdown" dir="ltr">
+         <br>
+          <!--Trigger-->
+          <button class="btn" type="button" id="dropdownMenu1" data-toggle="dropdown" (click)="showDropdown=!showDropdown"
+            aria-haspopup="true" aria-expanded="false"><i class="fa fa-align-justify "></i></button>
+        
+        
+          <!--Menu-->
+          <span class="dropdown-menu dropdown-primary" [ngClass]="{'show': showDropdown}" (mousein)="showDropdown = false">
+            <a class="dropdown-item" href="/customers">לקוחות</a>
+            <a class="dropdown-item" href="/drivers">נהגים</a>
+            <a class="dropdown-item" href="/vehicles">רכבים</a>
+            <a class="dropdown-item" href="/travels">נסיעות</a>
+          </span>
+        </div>‏
     </ul>
-    <br><br><br><br><br>
+    <br>
+    
+    
+
+
+
+    <!-- <br><br><br><br> -->
     <router-outlet ></router-outlet>
     <br><br><br>
     <footer  class="fixed-bottom"><i class="fa fa-copyright"></i> Rachel Hacker <span style="color: #ffc107;">&</span> Yehudit Lanel</footer>

@@ -19,3 +19,11 @@ footer{
     background-color: gray;
     direction: ltr;
 }
+div {
+    display: none;
+  }
+  @media (max-width: 600px) {
+    li     { display: none; }
+    div { display: inline-block; }
+  }
+ 

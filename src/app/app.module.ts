@@ -12,9 +12,6 @@ import { DriverComponent } from './components/driver/driver.component';
 import { TravelComponent } from './components/travel/travel.component';
 //import { RouterModule, Routes } from '@angular/router';
 import { CustomerComponent } from './components/customers/customer/customer.component';
-import { DriversComponent } from './components/drivers/drivers.component';
-import { DriverFormComponent } from './components/driver-form/driver-form.component';
-import { DriversListComponent } from './components/drivers-list/drivers-list.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
@@ -26,6 +23,12 @@ import { DetialCustomerComponent } from './components/customers/detial-customer/
 import { EditCustomerComponent } from './components/customers/edit-customer/edit-customer.component';
 import { DeleteCustomerComponent } from './components/customers/delete-customer/delete-customer.component';
 import { ListCustomersComponent } from './components/customers/list-customers/list-customers.component';
+import { AddDriverComponent } from './components/drivers1/add-driver/add-driver.component';
+import { AllDriversComponent } from './components/drivers1/all-drivers/all-drivers.component';
+import { DeleteDriverComponent } from './components/drivers1/delete-driver/delete-driver.component';
+import { DetialDriverComponent } from './components/drivers1/detial-driver/detial-driver.component';
+import { EditDriverComponent } from './components/drivers1/edit-driver/edit-driver.component';
+import { ListDriversComponent } from './components/drivers1/list-drivers/list-drivers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,9 +40,6 @@ import { ListCustomersComponent } from './components/customers/list-customers/li
     DriverComponent,
     TravelComponent,
     CustomerComponent,
-    DriversComponent,
-    DriverFormComponent,
-    DriversListComponent,
     PageNotFoundComponent,
    VehiclesComponent,
     VehicleFormComponent,
@@ -48,7 +48,13 @@ import { ListCustomersComponent } from './components/customers/list-customers/li
     DetialCustomerComponent,
     EditCustomerComponent,
     DeleteCustomerComponent,
-    ListCustomersComponent
+    ListCustomersComponent,
+    AddDriverComponent,
+    AllDriversComponent,
+    DeleteDriverComponent,
+    DetialDriverComponent,
+    EditDriverComponent,
+    ListDriversComponent
   ],
   imports: [
     BrowserModule,FormsModule,

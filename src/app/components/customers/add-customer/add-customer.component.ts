@@ -1,9 +1,6 @@
 import { Component, OnInit, Output ,EventEmitter, ViewChild} from '@angular/core';
-  
-import { User } from 'src/app/user';
 import { NgForm } from '@angular/forms';
 import { Customer } from 'src/app/classes/Customer';
-import { ActivatedRoute } from '@angular/router';
 import { ServerService } from 'src/app/service/server.service';
 
 @Component({
