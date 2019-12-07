@@ -43,7 +43,7 @@
   /* Close button on hover */
   .close:hover,
   .close:focus {
-    color: red;
+    color: #FFC107;
     cursor: pointer;
   }
   
@@ -62,3 +62,6 @@
     from {transform: scale(0)} 
     to {transform: scale(1)}
   }
+h4{
+  color: #FFC107 ;
+}
