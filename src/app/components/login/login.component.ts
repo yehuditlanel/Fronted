@@ -1,6 +1,6 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { User } from 'src/app/user';
+import { User } from 'src/app/classes/User1';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   myUser:User;
   @ViewChild("loginForm") form:NgForm;
   constructor(private route:Router) {
-    this.myUser= new User("",0,"","",0);
+    this.myUser= new User("",0,"","","");
    }
 
   ngOnInit() {

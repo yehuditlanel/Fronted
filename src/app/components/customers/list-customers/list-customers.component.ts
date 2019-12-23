@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from 'src/app/user';
 import { Router } from '@angular/router';
 import { Customer } from 'src/app/classes/Customer';
 
@@ -17,7 +16,7 @@ updateCustomer(){
    // this.router.navigateByUrl(['/customers',this.customers[i]])
 }
 deleteCustomer(){
-  alert("delete")
+  this.router.navigate(['/delete',this.customer])
 }
   ngOnInit() {
   }

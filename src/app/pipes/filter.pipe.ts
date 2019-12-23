@@ -9,7 +9,7 @@ export class FilterPipe implements PipeTransform {
   transform(arr: any, searchVal?: any): any {
     var res = [];
     arr.forEach(element => {
-      if (element.indexOf(searchVal) > -1) {
+      if (element.NameOfUser.indexOf(searchVal) > -1) {
         res.push(element);
       }
     });

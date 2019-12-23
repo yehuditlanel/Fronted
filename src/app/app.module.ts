@@ -54,7 +54,7 @@ import { ListDriversComponent } from './components/drivers1/list-drivers/list-dr
     DeleteDriverComponent,
     DetialDriverComponent,
     EditDriverComponent,
-    ListDriversComponent
+    ListDriversComponent,
   ],
   imports: [
     BrowserModule,FormsModule,

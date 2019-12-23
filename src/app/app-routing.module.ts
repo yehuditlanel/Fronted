@@ -9,6 +9,7 @@ import { AllCustomersComponent } from './components/customers/all-customers/all-
 import { EditCustomerComponent } from './components/customers/edit-customer/edit-customer.component';
 import { AllDriversComponent } from './components/drivers1/all-drivers/all-drivers.component';
 import { EditDriverComponent } from './components/drivers1/edit-driver/edit-driver.component';
+import { DeleteCustomerComponent } from './components/customers/delete-customer/delete-customer.component';
 
 const routes: Routes = [
   { path: '', component:  LoginComponent},
@@ -18,6 +19,9 @@ const routes: Routes = [
   ]},
   { path: 'edit',component:EditCustomerComponent,children:[
     {path:':id',component:EditCustomerComponent},
+  ]},
+  { path: 'delete',component:DeleteCustomerComponent,children:[
+    {path:':id',component:DeleteCustomerComponent},
   ]},
   { path: 'drivers', component:  AllDriversComponent,children:[
     {  path: ':id', component:  EditDriverComponent},

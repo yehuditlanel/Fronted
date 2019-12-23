@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/user';
+import { User } from 'src/app/classes/User1';
 import { ServerService } from 'src/app/service/server.service';
 @Component({
   selector: 'app-all-drivers',
@@ -7,11 +7,12 @@ import { ServerService } from 'src/app/service/server.service';
   styleUrls: ['./all-drivers.component.css']
 })
 export class AllDriversComponent implements OnInit {
+  searchText="";
   drivers:User[]
   constructor(private ds:ServerService){
   }
   onDriveAdded(data:User){
-    this.drivers.push(new User(data.NameOfUser,data.UsersId,data.AddressOfUser,data.PhoneOfUser,data.Permition));
+    this.drivers.push(new User(data.NameOfUser,data.UserId,data.AddressOfUser,data.PhoneOfUser,data.Permition));
   }
   ngOnInit() {
     this.drivers=[];

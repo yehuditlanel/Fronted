@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/user';
+import { User } from 'src/app/classes/User1';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ServerService } from 'src/app/service/server.service';
 
 @Component({
   selector: 'app-edit-driver',
@@ -9,23 +10,24 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditDriverComponent implements OnInit {
   driver:User=new User("",null,"","",null);
-  constructor(private route:ActivatedRoute,private router:Router) {}
+  constructor(private route:ActivatedRoute,private router:Router,private ds:ServerService) {}
 
   ngOnInit() {
     console.log(this.route.params);
     this.route.params.subscribe(
       params=>{
-        this.driver.AddressOfUser=params.addressOfUser
-        this.driver.NameOfUser=params.nameOfUser
-        this.driver.Permition=params.permition
-        this.driver.PhoneOfUser=params.phoneOfUser
-        this.driver.UsersId=params.userId
+        this.driver.AddressOfUser=params.AddressOfUser
+        this.driver.NameOfUser=params.NameOfUser
+        this.driver.Permition=params.Permition
+        this.driver.PhoneOfUser=params.PhoneOfUser
+        this.driver.UserId=params.UserId
         console.log(this.driver);
       }
     )
     console.log(this.driver);
   }
   onSubmitForm(){
+    this.ds.updateObject("User",this.driver);
        this.router.navigate(['/drivers']);
    
   }

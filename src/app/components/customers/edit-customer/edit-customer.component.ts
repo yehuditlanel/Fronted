@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Customer } from 'src/app/classes/Customer';
+import { ServerService } from 'src/app/service/server.service';
 
 @Component({
   selector: 'app-edit-customer',
@@ -9,7 +10,7 @@ import { Customer } from 'src/app/classes/Customer';
 })
 export class EditCustomerComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute,private router:Router) {}
+  constructor(private route:ActivatedRoute,private router:Router,private cs:ServerService) {}
 customer:Customer=new Customer("vv","vv","vvv","vv");
 
 
@@ -27,6 +28,7 @@ customer:Customer=new Customer("vv","vv","vvv","vv");
     console.log(this.customer);
   }
   onSubmitForm(){
+    this.cs.updateObject("Customer",this.customer);
        this.router.navigate(['/customers']);
    
   }

@@ -1,3 +1,30 @@
 <p>
-  delete-customer works!
+  delete customer work
 </p>
+<div class="modal" id="deleteCustomer" align="center">
+<form class="modal-content animate"action="/action_page.php" >
+  <!-- (ngSubmit)="onSubmitForm()" #deleteForm="ngForm" -->
+<h1>מחיקת לקוח</h1>
+<div>האם אתה בטוח רוצה למחוק את הלקוח לצמיתות?</div>
+<div class="container">
+<label for="conectedName"><b>  שם איש קשר  </b></label><br>
+{{customer.Conected_name}}
+<br>
+<label for="conectedPhone"><b>טלפון איש קשר</b></label><br>
+{{customer.Conected_phone}}
+<br>
+<label for="group_s_code"><b>  קוד קבוצה  </b></label><br>
+{{customer.Group_s_code}}
+<br>
+<label for="group_s_name"><b>שם קבוצה</b></label><br>
+{{customer.Group_s_name}}
+</div>
+<br>
+<button  (click)="onSubmitForm()" type="submit" > אישור</button>
+<!-- <button class="col-sm-3" type="button" (click)="cancel()" onclick="document.getElementById('deleteCustomer').style.display='none'" >Cancel</button> -->
+
+</form>
+</div>
+
+
+

@@ -3,30 +3,27 @@
 <button class=" btn  btn-circle btn-md " onclick="document.getElementById('addDriver').style.display='block'"><i class="fa fa-ambulance"></i></button>‏
 <!-- The Modal -->
 <div id="addDriver" class="modal">
-  <span onclick="document.getElementById('addDriver').style.display='none'" 
-class="close" title="Close Modal">&times;</span>
+  
 
   <!-- Modal Content -->
-  <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #driverForm="ngForm">
+  <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #driverForm="ngForm" align="center">
     <br>
-
+    <div class="modal-header">
+      <h4 class="modal-title w-100" id="myModalLabel">הוספת לקוח</h4>
+      <span onclick="document.getElementById('addDriver').style.display='none'" 
+class="close" title="Close Modal">&times;</span>
+    </div>
     <div class="container">
       <label for="uname"><b> שם משתמש  </b></label><br>
-
-      <input type="text" placeholder="הכנס שם משתמש" name="uname" [(ngModel)]="myDriver.nameOfUser" required>
+      <input type="text" placeholder="הכנס שם משתמש" name="uname" [(ngModel)]="newDriver.NameOfUser" required>
       <br>
-
       <label for="psw"><b>סיסמה</b></label><br>
-      <input type="password" placeholder="הכנס סיסמה" name="psw" [(ngModel)]="myDriver.usersId" required>
+      <input type="password" placeholder="הכנס סיסמה" name="psw" [(ngModel)]="newDriver.UserId" required>
 <br><br>
 <button type="submit" onclick="document.getElementById('addDriver').style.display='none'">הוסף</button><br>
     </div>
 <br>
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('addDriver').style.display='none'" class="cancelbtn">Cancel</button>
-      <br>
-
-    </div>
+    
 <br>
   </form>
 </div>

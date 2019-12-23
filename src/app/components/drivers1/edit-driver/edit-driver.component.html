@@ -1,6 +1,6 @@
 <div class="modal" id="editDriver">
 <form class="modal-content animate"action="/action_page.php" (ngSubmit)="onSubmitForm()" #editForm="ngForm">
-  <span onclick="document.getElementById('editDriver').style.display='none'" 
+  <span (click)="cancel()" onclick="document.getElementById('editDriver').style.display='none'" 
   class="close" title="Close Modal">&times;</span>
   <h1>עריכת נהג</h1>
 
@@ -10,7 +10,7 @@
 <input type="text" name="driverName" [(ngModel)]="driver.NameOfUser" required>
 <br>
 <label for="driverId"><b>  ת"ז נהג  </b></label><br>
-<input   name="driverId" [(ngModel)]="driver.UsersId" required>
+<input   name="driverId" [(ngModel)]="driver.UserId" required>
 <br>
 <label for="driverAddress"><b>כתובת נהג</b></label><br>
 <input  name="driverAddress" [(ngModel)]="driver.AddressOfUser" >
