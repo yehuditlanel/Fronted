@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/classes/User1';
+import { User } from 'src/app/classes/User';
 import { ServerService } from 'src/app/service/server.service';
 @Component({
   selector: 'app-all-drivers',

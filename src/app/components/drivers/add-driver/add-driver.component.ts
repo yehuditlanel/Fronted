@@ -1,5 +1,5 @@
 import { Component, OnInit, Output,EventEmitter, ViewChild } from '@angular/core';
-import { User } from 'src/app/classes/User1';
+import { User } from 'src/app/classes/User';
 import { NgForm } from '@angular/forms';
 import { ServerService } from 'src/app/service/server.service';
 @Component({
