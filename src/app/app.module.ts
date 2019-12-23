@@ -23,12 +23,12 @@ import { DetialCustomerComponent } from './components/customers/detial-customer/
 import { EditCustomerComponent } from './components/customers/edit-customer/edit-customer.component';
 import { DeleteCustomerComponent } from './components/customers/delete-customer/delete-customer.component';
 import { ListCustomersComponent } from './components/customers/list-customers/list-customers.component';
-import { AddDriverComponent } from './components/drivers1/add-driver/add-driver.component';
-import { AllDriversComponent } from './components/drivers1/all-drivers/all-drivers.component';
-import { DeleteDriverComponent } from './components/drivers1/delete-driver/delete-driver.component';
-import { DetialDriverComponent } from './components/drivers1/detial-driver/detial-driver.component';
-import { EditDriverComponent } from './components/drivers1/edit-driver/edit-driver.component';
-import { ListDriversComponent } from './components/drivers1/list-drivers/list-drivers.component';
+import { AddDriverComponent } from './components/drivers/add-driver/add-driver.component';
+import { AllDriversComponent } from './components/drivers/all-drivers/all-drivers.component';
+import { DeleteDriverComponent } from './components/drivers/delete-driver/delete-driver.component';
+import { DetialDriverComponent } from './components/drivers/detial-driver/detial-driver.component';
+import { EditDriverComponent } from './components/drivers/edit-driver/edit-driver.component';
+import { ListDriversComponent } from './components/drivers/list-drivers/list-drivers.component';
 @NgModule({
   declarations: [
     AppComponent,

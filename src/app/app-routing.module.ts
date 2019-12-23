@@ -7,8 +7,8 @@ import { TravelComponent } from './components/travel/travel.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { AllCustomersComponent } from './components/customers/all-customers/all-customers.component';
 import { EditCustomerComponent } from './components/customers/edit-customer/edit-customer.component';
-import { AllDriversComponent } from './components/drivers1/all-drivers/all-drivers.component';
-import { EditDriverComponent } from './components/drivers1/edit-driver/edit-driver.component';
+import { AllDriversComponent } from './components/drivers/all-drivers/all-drivers.component';
+import { EditDriverComponent } from './components/drivers/edit-driver/edit-driver.component';
 import { DeleteCustomerComponent } from './components/customers/delete-customer/delete-customer.component';
 
 const routes: Routes = [
