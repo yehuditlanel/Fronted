@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
   isShowErrText=false;
   errText="";
   myUser:User;
-  @ViewChild("loginForm") form:NgForm;
+  @ViewChild("loginForm",{static:true}) form:NgForm;
   constructor(private route:Router) {
     this.myUser= new User("",0,"","","");
    }
