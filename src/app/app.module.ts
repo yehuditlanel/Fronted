@@ -10,7 +10,6 @@ import { ShortStrPipe } from './pipes/short-str.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { DriverComponent } from './components/driver/driver.component';
 import { TravelComponent } from './components/travel/travel.component';
-//import { RouterModule, Routes } from '@angular/router';
 import { CustomerComponent } from './components/customers/customer/customer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,6 +28,8 @@ import { DeleteDriverComponent } from './components/drivers/delete-driver/delete
 import { DetialDriverComponent } from './components/drivers/detial-driver/detial-driver.component';
 import { EditDriverComponent } from './components/drivers/edit-driver/edit-driver.component';
 import { ListDriversComponent } from './components/drivers/list-drivers/list-drivers.component';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,9 @@ import { ListDriversComponent } from './components/drivers/list-drivers/list-dri
   ],
   imports: [
     BrowserModule,FormsModule,
-    AppRoutingModule,HttpClientModule
+    AppRoutingModule,HttpClientModule,
+    MatSliderModule,MatIconModule
+
   ],
   providers: [ServerService],
   bootstrap: [AppComponent]

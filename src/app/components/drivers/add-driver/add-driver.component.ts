@@ -10,7 +10,7 @@ import { ServerService } from 'src/app/service/server.service';
 export class AddDriverComponent implements OnInit {
   newDriver:User;
   @Output() addDrive=new EventEmitter<User>();
-  @ViewChild ("driverForm")form:NgForm
+  @ViewChild ("driverForm",{static:true})form:NgForm
     constructor(private ds:ServerService) {
       this.newDriver=new User("",null,"","","Driver");
      }

@@ -10,7 +10,7 @@ import { ServerService } from 'src/app/service/server.service';
 })
 export class AddCustomerComponent implements OnInit {
 @Output() addCustomer=new  EventEmitter<Customer>();
-@ViewChild ("customerForm")form:NgForm;
+@ViewChild ("customerForm",{static:true})form:NgForm;
 newCustomer:Customer;
 constructor(private cs:ServerService) { this.newCustomer= new Customer("","","",""); }
   onSubmitForm(form:NgForm){
