@@ -3,13 +3,13 @@
 
 <!-- The Modal -->
 <div id="addCustomer" class="modal">
-  <span onclick="document.getElementById('addCustomer').style.display='none'" 
-class="close" title="Close Modal">&times;</span>
+  
 
   <!-- Modal Content -->
   <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #customerForm="ngForm">
-    <br>
-
+    <h1>הוסף לקוח</h1>
+    <span onclick="document.getElementById('addCustomer').style.display='none'" 
+    class="close" title="Close Modal">&times;</span>
     <div class="container">
       <label for="groupsCode"><b> קוד קבוצה </b></label><br>
       <input type="text" placeholder="הכנס  קוד קבוצה" name="groupsCode" [(ngModel)]="newCustomer.Group_s_code" required>

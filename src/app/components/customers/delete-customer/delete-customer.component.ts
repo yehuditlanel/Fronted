@@ -43,7 +43,7 @@ customer:Customer=new Customer("","","","");
     this.router.navigate(['/customers']);
   }
   onSubmitForm(){
-    this.server.deleteObject("http://localhost:55750/api/Customer",123);
+    this.server.deleteObject("Customer",this.customer.Group_s_code);
      //this.server.deleteObject("Customer",(this.customer.Group_s_code);
       //this.router.navigate(['/customers']);
    

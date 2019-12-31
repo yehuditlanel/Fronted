@@ -1,28 +1,13 @@
+<body  dir="rtl">
+  <ul  class="container list-group list-group-flush">
+    <li   class="row mb-3    border border-right-0 border-left-0" > 
+      <span  class="col-3 offset-1  mt-3 mb-3" >{{customer.Conected_name}}</span>
+      <span style="text-align: center;" class="col-8 mt-3 mb-3">
+        <a  routerLink="/customers"  (click)="updateCustomer()">עריכה</a> 
+        <span > | </span>
+        <a  routerLink="/customers" (click)="deleteCustomer()" >מחיקה</a>
+      </span>
+      </li>
+  </ul>
+</body>
 
-
-<!-- רחלי הקר שלחה לי -->
-  <!-- <body  dir="rtl">
-      <ul  class="container list-group list-group-flush">
-        <li  class="row mb-3 list-group-item border border-success border-right-0 border-left-0" > 
-          <span  class="col-3 offset-4 mydir" >{{customer.Conected_name}}</span>
-          <span class="col-3 offset-2">
-            <a  routerLink="/customers"  (click)="updateCustomer()">עריכה</a> 
-            <span > | </span>
-            <a  routerLink="/customers" (click)="deleteCustomer()" >מחיקה</a>
-          </span>
-           </li>
-      </ul>
-      </body> -->
-      <body  dir="rtl">
-          <ul  class="container list-group list-group-flush">
-            <li   class="row mb-3    border border-right-0 border-left-0" > 
-              <span  class="col-3 offset-1  mt-3 mb-3" >{{customer.Conected_name}}</span>
-              <span style="text-align: center;" class="col-8 mt-3 mb-3">
-                <a  routerLink="/customers"  (click)="updateCustomer()">עריכה</a> 
-                <!-- <app-edit-customer></app-edit-customer> -->
-                <span > | </span>
-                <a  routerLink="/customers" (click)="deleteCustomer()" >מחיקה</a>
-              </span>
-              </li>
-          </ul>
-      </body>

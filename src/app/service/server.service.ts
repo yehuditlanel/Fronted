@@ -17,7 +17,7 @@ export class ServerService {
   addObject(url:string,object:any){
     this.server.post(this.path+url,object).subscribe();
   }
-  deleteObject(url:string, id:number){
+  deleteObject(url:string, id:string){
     this.server.delete(this.path+url+'/'+id).subscribe();
   }
   updateObject(url:string,object:any){

@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { change }from './directives/changinput.directives';
@@ -30,6 +29,10 @@ import { EditDriverComponent } from './components/drivers/edit-driver/edit-drive
 import { ListDriversComponent } from './components/drivers/list-drivers/list-drivers.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,8 +63,13 @@ import {MatIconModule} from '@angular/material/icon';
   imports: [
     BrowserModule,FormsModule,
     AppRoutingModule,HttpClientModule,
-    MatSliderModule,MatIconModule
-
+    MatSliderModule,MatIconModule,ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule
   ],
   providers: [ServerService],
   bootstrap: [AppComponent]

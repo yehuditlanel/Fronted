@@ -2,8 +2,10 @@
   delete customer work
 </p>
 <div class="modal" id="deleteCustomer" align="center">
-<form class="modal-content animate"action="/action_page.php" >
+<form class="modal-content animate"action="/action_page.php" (ngSubmit)="onSubmitForm()">
   <!-- (ngSubmit)="onSubmitForm()" #deleteForm="ngForm" -->
+  <span (click)="cancel()" onclick="document.getElementById('deleteCustomer').style.display='none'" 
+class="close" title="Close Modal">&times;</span>
 <h1>מחיקת לקוח</h1>
 <div>האם אתה בטוח רוצה למחוק את הלקוח לצמיתות?</div>
 <div class="container">

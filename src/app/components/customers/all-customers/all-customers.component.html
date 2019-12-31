@@ -1,3 +1,13 @@
+<!-- <form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Search" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form> -->
 <app-list-customers  *ngFor="let item of customers;let i=index" [customer]="item"></app-list-customers>
 <body>
 <div class="container">
