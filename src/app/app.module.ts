@@ -8,12 +8,9 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ShortStrPipe } from './pipes/short-str.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { DriverComponent } from './components/driver/driver.component';
-import { TravelComponent } from './components/travel/travel.component';
 import { CustomerComponent } from './components/customers/customer/customer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
-import { VehiclesComponent } from './components/vehicles/vehicles.component';
-import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
 import { ServerService } from './service/server.service';
 import { AllCustomersComponent } from './components/customers/all-customers/all-customers.component';
 import { AddCustomerComponent } from './components/customers/add-customer/add-customer.component';
@@ -33,6 +30,18 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
+import { AddTravelComponent } from './components/travels/add-travel/add-travel.component';
+import { EditTravelComponent } from './components/travels/edit-travel/edit-travel.component';
+import { AllTravelsComponent } from './components/travels/all-travels/all-travels.component';
+import { DeleteTravelComponent } from './components/travels/delete-travel/delete-travel.component';
+import { DetailTravelComponent } from './components/travels/detail-travel/detail-travel.component';
+import { ListTravelsComponent } from './components/travels/list-travels/list-travels.component';
+import { AddVehicleComponent } from './components/vehicles/add-vehicle/add-vehicle.component';
+import { AllVehicleComponent } from './components/vehicles/all-vehicle/all-vehicle.component';
+import { DeleteVehicleComponent } from './components/vehicles/delete-vehicle/delete-vehicle.component';
+import { DetailVehicleComponent } from './components/vehicles/detail-vehicle/detail-vehicle.component';
+import { EditVehicleComponent } from './components/vehicles/edit-vehicle/edit-vehicle.component';
+import { ListVehicleComponent } from './components/vehicles/list-vehicle/list-vehicle.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,11 +51,8 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } 
     ShortStrPipe,
     LoginComponent,
     DriverComponent,
-    TravelComponent,
     CustomerComponent,
     PageNotFoundComponent,
-   VehiclesComponent,
-    VehicleFormComponent,
     AllCustomersComponent,
     AddCustomerComponent,
     DetialCustomerComponent,
@@ -59,6 +65,18 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } 
     DetialDriverComponent,
     EditDriverComponent,
     ListDriversComponent,
+    AddTravelComponent,
+    EditTravelComponent,
+    AllTravelsComponent,
+    DeleteTravelComponent,
+    DetailTravelComponent,
+    ListTravelsComponent,
+    AddVehicleComponent,
+    AllVehicleComponent,
+    DeleteVehicleComponent,
+    DetailVehicleComponent,
+    EditVehicleComponent,
+    ListVehicleComponent,
   ],
   imports: [
     BrowserModule,FormsModule,

@@ -1,0 +1,31 @@
+<!-- Button to open the modal driver form -->
+
+<button class=" btn  btn-circle btn-md  btn-outline-warning " onclick="document.getElementById('addVehicle').style.display='block'"><i class="fa fa-ambulance"></i></button>
+
+<!-- The Modal -->
+<div id="addVehicle" class="modal">
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #customerForm="ngForm" align="center">
+    <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">הוספת רכב</h4>
+        <span onclick="document.getElementById('addVehicle').style.display='none'"class="close" title="Close Modal">&times;</span>
+      </div>
+    <div class="container">
+      <label for="LicensePlate"><b> מספר רישוי</b></label><br>
+      <input type="text" placeholder="הכנס  מספר רישוי" name="LicensePlate" [(ngModel)]="newVehicle.License_plate" required>
+      <br>
+      <label for="Type"><b>סוג רכב</b></label><br>
+      <input type="text" placeholder="הכנס סוג רכב " name="Type" [(ngModel)]="newVehicle.Type" required>
+      <br>
+      <label for="SeveralPlaces"><b> מספר מקומות </b></label><br>
+      <input type="text" placeholder="הכנס  מספר מקומות" name="SeveralPlaces" [(ngModel)]="newVehicle.Several_places" required>
+      <br>
+      <label for="QuantityOfFuelPerKm"><b> כמות דלק לק"מ</b></label><br>
+      <input type="text" placeholder="הכנס  כמות דלק לק''מ" name="QuantityOfFuelPerKm" [(ngModel)]="newVehicle.Quantity_of_fuel_per_km" required>
+      <br>
+<br>
+<button type="submit" onclick="document.getElementById('addVehicle').style.display='none'">הוסף</button><br>
+    <br>
+</div>
+  </form>
+</div>

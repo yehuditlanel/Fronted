@@ -1,10 +1,10 @@
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
-    top: 0px;
+    top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -12,21 +12,7 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 90px;
   }
-  .mat-fab{
-    background-color: #FFC107;
-  }
-  button{
-    outline: none;
-  }
-  .btn-circle.btn-md { 
-    width: 5px; 
-    height: 50px; 
-    padding: 7px 1px; 
-    border-radius: 25px; 
-    font-size: 1px; 
-    text-align: center; 
-    background-color:  #FFC107;
-  } ‏
+  
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
@@ -49,7 +35,7 @@
   /* Close button on hover */
   .close:hover,
   .close:focus {
-    color: #FFC107;
+    color:  #FFC107;
     cursor: pointer;
   }
   
@@ -68,6 +54,9 @@
     from {transform: scale(0)} 
     to {transform: scale(1)}
   }
-h4{
-  color: #FFC107 ;
-}
+  h4{
+    color: #FFC107 ;
+  }
+  .text{
+    color: #FFC107 ;
+  }

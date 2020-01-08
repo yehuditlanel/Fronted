@@ -1,0 +1,27 @@
+<p>delete-vehicle works!</p>
+<div class="modal" id="deleteVehicle" align="center">
+    <form class="modal-content animate"action="/action_page.php"(ngSubmit)="onSubmitForm()" >
+     
+    <div class="modal-header">
+      <h4 class="modal-title w-100" id="myModalLabel">מחיקת רכב</h4>
+      <span (click)="cancel()" onclick="document.getElementById('deleteVehicle').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    <!-- <h1>מחיקת רכב</h1> -->
+    <div>האם אתה בטוח רוצה למחוק את הרכב לצמיתות?</div>
+    <div class="container">
+    <label for="LicensePlate"><b> מספר רישוי</b></label><br>
+    {{vehicle.License_plate}}
+    <br>
+    <label for="Type"><b>סוג רכב</b></label><br>
+    {{vehicle.Type}}
+    <br>
+    <label for="Several_places"><b>  מספר מקומות  </b></label><br>
+    {{vehicle.Several_places}}
+    <br>
+    <label for="Quantity_of_fuel_per_km"><b>כמות דלק לק"מ</b></label><br>
+    {{vehicle.Quantity_of_fuel_per_km}}
+    </div>
+    <button  (click)="onSubmitForm()" type="submit" > אישור</button>    
+    </form>
+    </div>
+    

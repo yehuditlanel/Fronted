@@ -1,3 +1,6 @@
+.mydir{
+    text-align: center;
+}
 input:focus {
     outline: none;
     box-shadow: none;

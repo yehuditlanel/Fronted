@@ -15,7 +15,7 @@ export class ListDriversComponent implements OnInit {
      // this.router.navigateByUrl(['/customers',this.customers[i]])
   }
   deleteDriver(){
-    alert("delete")
+    this.router.navigate(['/deleteDriver',this.driver])
   }
   ngOnInit() {
   }

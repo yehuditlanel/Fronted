@@ -1,0 +1,13 @@
+<body  dir="rtl">
+    <ul  class="container list-group list-group-flush">
+      <li   class="row mb-3    border border-secondary border-right-0 border-left-0" > 
+        <span  class=" col-3 offset-1  mt-3 mb-3" >{{vehicle.Type}}</span>
+        <span style="text-align: center;" class="col-8 mt-3 mb-3">
+          <!-- ??? -->
+          <a class="text" routerLink="/vehicles"  (click)="updateVehicle()">עריכה</a> 
+          <span > | </span>
+          <a class="text"  routerLink="/vehicles" (click)="deleteVehicle()" >מחיקה</a>
+        </span>
+        </li>
+    </ul>
+    </body>

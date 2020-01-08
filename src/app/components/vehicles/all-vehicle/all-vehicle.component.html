@@ -1,0 +1,15 @@
+<body class="mydir ml-5 mr-5 " dir="rtl">
+    
+    <div class="row">
+    <!-- <span  class="col-10"> <input style="width: 100%;" type="text" placeholder="חיפוש"></span> -->
+        
+
+    <span  class="col-10"> <input placeholder="חיפוש" class="form-control container body-content"></span>
+    <span  class="col-2" > <app-add-vehicle   (addVehicle)="onVehicleAdded($event)"></app-add-vehicle></span>
+  <!--  -->
+  </div>
+    <br><br>
+<app-list-vehicle  *ngFor="let item of vehicles;let i=index" [vehicle]="item"></app-list-vehicle>
+
+<br>
+</body>

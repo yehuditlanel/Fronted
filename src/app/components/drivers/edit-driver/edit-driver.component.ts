@@ -9,8 +9,11 @@ import { ServerService } from 'src/app/service/server.service';
   styleUrls: ['./edit-driver.component.css']
 })
 export class EditDriverComponent implements OnInit {
-  driver:User=new User("",null,"","",null);
-  constructor(private route:ActivatedRoute,private router:Router,private ds:ServerService) {}
+  driver:User
+  constructor(private route:ActivatedRoute,private router:Router,private ds:ServerService) {
+    this.driver=new User("",null,"","","Driver");
+
+  }
 
   ngOnInit() {
     console.log(this.route.params);
@@ -21,7 +24,6 @@ export class EditDriverComponent implements OnInit {
         this.driver.Permition=params.Permition
         this.driver.PhoneOfUser=params.PhoneOfUser
         this.driver.UserId=params.UserId
-        console.log(this.driver);
       }
     )
     console.log(this.driver);
