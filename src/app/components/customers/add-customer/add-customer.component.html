@@ -3,13 +3,12 @@
 
 <!-- The Modal -->
 <div id="addCustomer" class="modal">
-  
-
   <!-- Modal Content -->
   <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #customerForm="ngForm">
-    <h1>הוסף לקוח</h1>
-    <span onclick="document.getElementById('addCustomer').style.display='none'" 
-    class="close" title="Close Modal">&times;</span>
+    <div class="modal-header">
+      <h4 class="modal-title w-100" id="myModalLabel">הוספת לקוח</h4>
+      <span onclick="document.getElementById('addCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
     <div class="container">
       <label for="groupsCode"><b> קוד קבוצה </b></label><br>
       <input type="text" placeholder="הכנס  קוד קבוצה" name="groupsCode" [(ngModel)]="newCustomer.Group_s_code" required>
@@ -22,10 +21,9 @@
       <br>
       <label for="conectedsPhone"><b>  טלפון איש קשר</b></label><br>
       <input type="text" placeholder="הכנס  טלפון איש קשר" name="conectedsPhone" [(ngModel)]="newCustomer.Conected_phone" required>
+      <br><br>
+      <button type="submit" onclick="document.getElementById('addCustomer').style.display='none'">הוסף</button><br>
       <br>
-<br>
-<button type="submit" onclick="document.getElementById('addCustomer').style.display='none'">הוסף</button><br>
     </div>
-<br>
   </form>
 </div>

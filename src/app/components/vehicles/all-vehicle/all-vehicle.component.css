@@ -2,6 +2,7 @@
     text-align: center;
 }
 input:focus {
+    color: #000;
     outline: none;
     box-shadow: none;
     border-color: gray;

@@ -40,9 +40,6 @@
     color: #FFC107;
     cursor: pointer;
   }
-button{
-  background-color: rgb(248, 221, 140);
-}
   /* Add Zoom Animation */
   .animate {
     -webkit-animation: animatezoom 0.6s;

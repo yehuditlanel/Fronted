@@ -2,23 +2,25 @@
   delete driver work
 </p>
 <div class="modal" id="deleteDriver" align="center">
-<form class="modal-content animate"action="/action_page.php" (ngSubmit)="onSubmitForm()">
-  <span (click)="cancel()" onclick="document.getElementById('deleteDriver').style.display='none'" 
-class="close" title="Close Modal">&times;</span>
-<h1>מחיקת לקוח</h1>
-<div>האם אתה בטוח רוצה למחוק את הנהג לצמיתות?</div>
-<div class="container">
-<label for="conectedName"><b>  שם נהג  </b></label><br>
-{{driver.NameOfUser}}
-<br>
-<label for="conectedPhone"><b>כתובת נהג</b></label><br>
-{{driver.AddressOfUser}}
-<br>
-<label for="group_s_code"><b> מס' טלפון נהג  </b></label><br>
-{{driver.PhoneOfUser}}
-<br>
-</div>
-<button  (click)="onSubmitForm()" type="submit" > אישור</button>
+  <form class="modal-content animate"action="/action_page.php" (ngSubmit)="onSubmitForm()">
+    <div class="modal-header">
+      <h4 class="modal-title w-100" id="myModalLabel">מחיקת נהג</h4>
+      <span (click)="cancel()" onclick="document.getElementById('deleteDriver').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    <div>האם אתה בטוח רוצה למחוק את הנהג לצמיתות?</div>
+    <div class="container">
+      <label for="conectedName"><b>  שם נהג  </b></label><br>
+      {{driver.NameOfUser}}
+      <br>
+      <label for="conectedPhone"><b>כתובת נהג</b></label><br>
+      {{driver.AddressOfUser}}
+      <br>
+      <label for="group_s_code"><b> מס' טלפון נהג  </b></label><br>
+      {{driver.PhoneOfUser}}
+      <br><br>
+      <button (click)="onSubmitForm()" type="submit">אישור</button>
+      <br><br>
+    </div>
 </form>
 </div>
 

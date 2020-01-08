@@ -31,7 +31,9 @@
     font-size: 35px;
     font-weight: bold;
   }
-  
+  h4{
+    color: #FFC107;
+  }
   /* Close button on hover */
   .close:hover,
   .close:focus {

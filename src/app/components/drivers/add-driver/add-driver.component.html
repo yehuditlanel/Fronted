@@ -3,15 +3,11 @@
 
 <!-- The Modal -->
 <div id="addDriver" class="modal">
-  
-
   <!-- Modal Content -->
   <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #driverForm="ngForm" align="center">
-    <br>
     <div class="modal-header">
-      <h4 class="modal-title w-100" id="myModalLabel">הוספת לקוח</h4>
-      <span onclick="document.getElementById('addDriver').style.display='none'" 
-class="close" title="Close Modal">&times;</span>
+      <h4 class="modal-title w-100" id="myModalLabel">הוספת נהג</h4>
+      <span onclick="document.getElementById('addDriver').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
     <div class="container">
       <label for="uname"><b> שם משתמש  </b></label><br>
@@ -25,12 +21,9 @@ class="close" title="Close Modal">&times;</span>
       <br>
       <label for="uphone"><b>פלאפון</b></label><br>
       <input placeholder="הכנס מספר פלאפון" name="uphone" [(ngModel)]="newDriver.PhoneOfUser" required>
-
       <br><br>
-<button type="submit" onclick="document.getElementById('addDriver').style.display='none'">הוסף</button><br>
+      <button type="submit" onclick="document.getElementById('addDriver').style.display='none'">הוסף</button>
+      <br><br>
     </div>
-<br>
-    
-<br>
   </form>
 </div>

@@ -9,7 +9,7 @@
     <div class="modal-header">
         <h4 class="modal-title w-100" id="myModalLabel">הוספת רכב</h4>
         <span onclick="document.getElementById('addVehicle').style.display='none'"class="close" title="Close Modal">&times;</span>
-      </div>
+    </div>
     <div class="container">
       <label for="LicensePlate"><b> מספר רישוי</b></label><br>
       <input type="text" placeholder="הכנס  מספר רישוי" name="LicensePlate" [(ngModel)]="newVehicle.License_plate" required>
@@ -22,10 +22,9 @@
       <br>
       <label for="QuantityOfFuelPerKm"><b> כמות דלק לק"מ</b></label><br>
       <input type="text" placeholder="הכנס  כמות דלק לק''מ" name="QuantityOfFuelPerKm" [(ngModel)]="newVehicle.Quantity_of_fuel_per_km" required>
-      <br>
-<br>
-<button type="submit" onclick="document.getElementById('addVehicle').style.display='none'">הוסף</button><br>
-    <br>
-</div>
+      <br><br>
+      <button type="submit" onclick="document.getElementById('addVehicle').style.display='none'">הוסף</button>
+      <br><br>
+    </div>
   </form>
 </div>
