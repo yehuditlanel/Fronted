@@ -8,8 +8,8 @@
     </mat-autocomplete>
   </mat-form-field>
 </form> -->
-<app-list-customers  *ngFor="let item of customers;let i=index" [customer]="item"></app-list-customers>
-<body>
+<app-list-customers *ngFor="let item of customers;let i=index" [customer]="item"></app-list-customers>
+<!-- <body>
 <div class="container">
   <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo" (click)="showDropdown=!showDropdown" >Simple collapsible</button>
   <div id="demo" class="collapse" [ngClass]="{'show': showDropdown}" (mousein)="showDropdown = false">
@@ -18,6 +18,6 @@
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </div>
 </div>
-</body>
+</body> -->
 
 <app-add-customer (addCustomer)="onCustomerAdded($event)"></app-add-customer>

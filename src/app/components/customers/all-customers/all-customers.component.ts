@@ -3,9 +3,9 @@ import { Customer } from 'src/app/classes/Customer';
 import { ServerService } from 'src/app/service/server.service';
 import { Router } from '@angular/router';
 /////////////////////////////////////////////
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+//import {FormControl} from '@angular/forms';
+//import {Observable} from 'rxjs';
+//import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-all-customers',
@@ -15,9 +15,9 @@ import {map, startWith} from 'rxjs/operators';
 export class AllCustomersComponent implements OnInit {
   customers:Customer[];
   //////////////////////////
-  myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three',"On"];
-  filteredOptions: Observable<string[]>;
+  //myControl = new FormControl();
+  //options: string[] = ['One', 'Two', 'Three',"On"];
+ // filteredOptions: Observable<string[]>;
 ///////////////////////////////////
   constructor(private cs:ServerService,private router:Router){ 
   }
@@ -44,6 +44,6 @@ p(){
   //   return this.options.filter(option => option.toLowerCase().includes(filterValue));
   // }
   onCustomerAdded(data:Customer){
-    this.customers.push(new Customer(data.Group_s_code,data.Conected_name,data.Conected_phone,data.Group_s_name));
+    this.customers.push(new Customer(data.Conected_name,data.Conected_phone,data.Group_s_name));
   }
 }

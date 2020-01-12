@@ -26,7 +26,7 @@ import { ServerService } from 'src/app/service/server.service';
 export class DeleteCustomerComponent implements OnInit {
 
   constructor(private server:ServerService,private route:ActivatedRoute,private router:Router) {}
-customer:Customer=new Customer("","","","");
+customer:Customer=new Customer("","","");
 
 
   ngOnInit() {
@@ -34,7 +34,6 @@ customer:Customer=new Customer("","","","");
       params=>{
         this.customer.Conected_name=params.Conected_name
         this.customer.Conected_phone=params.Conected_phone
-        this.customer.Group_s_code=params.Group_s_code
         this.customer.Group_s_name=params.Group_s_name
       }
     )

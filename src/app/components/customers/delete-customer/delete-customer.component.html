@@ -1,3 +1,4 @@
+<!-- <a onclick="document.getElementById('deleteCustomer').style.display='block'">מחיקה</a> -->
 <div class="modal" id="deleteCustomer" align="center">
   <form class="modal-content animate"action="/action_page.php" (ngSubmit)="onSubmitForm()">
     <div class="modal-header">
@@ -11,9 +12,6 @@
       <br>
       <label for="conectedPhone"><b>טלפון איש קשר</b></label><br>
       {{customer.Conected_phone}}
-      <br>
-      <label for="group_s_code"><b>  קוד קבוצה  </b></label><br>
-      {{customer.Group_s_code}}
       <br>
       <label for="group_s_name"><b>שם קבוצה</b></label><br>
       {{customer.Group_s_name}}
