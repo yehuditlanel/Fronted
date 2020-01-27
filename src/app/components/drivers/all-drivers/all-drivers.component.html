@@ -1,9 +1,15 @@
 <body class="mydir ml-5 mr-5 " dir="rtl">
     <div class="row">
-    <span class="col-10"><input placeholder="חיפוש"  [(ngModel)]="searchText" class="form-control container body-content"></span>
+      <div class="main">
+      <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback"><mat-icon>search</mat-icon></span>
+        <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="חיפוש">
+      </div>
+    </div>
+    <!-- <span class="col-10"><input  placeholder="חיפוש"  [(ngModel)]="searchText" class="form-control container body-content"></span> -->
     <span class="col-2" > <app-add-driver (addDrive)="onDriveAdded($event)"></app-add-driver></span>
   </div>
-    <br><br>
-    <app-list-drivers *ngFor="let item of drivers|filter:searchText" [driver]="item"></app-list-drivers>
     <br>
+    <app-list-drivers *ngFor="let item of drivers|filter:searchText" [driver]="item"></app-list-drivers>
+    
 </body>‏

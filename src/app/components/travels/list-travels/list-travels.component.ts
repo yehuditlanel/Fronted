@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Travel } from 'src/app/classes/Travel';
 
 @Component({
   selector: 'app-list-travels',
@@ -7,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListTravelsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private router:Router) { }
+@Input()travel:Travel;
+updateCustomer(){
+  this.router.navigate(['/edit',this.travel])
+   // this.router.navigateByUrl(['/customers',this.customers[i]])
+}
+deleteCustomer(){
+  this.router.navigate(['/delete',this.travel])
+}
   ngOnInit() {
   }
 

@@ -44,6 +44,6 @@ p(){
   //   return this.options.filter(option => option.toLowerCase().includes(filterValue));
   // }
   onCustomerAdded(data:Customer){
-    this.customers.push(new Customer(data.Conected_name,data.Conected_phone,data.Group_s_name));
+    this.customers.push(new Customer(data.Conected_name,data.Conected_phone,data.Group_s_code,data.Group_s_name));
   }
 }
