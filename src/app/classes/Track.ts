@@ -1,17 +1,18 @@
+import { Time } from '@angular/common';
+
 export class Track{
     TrackCode:number;
     TravelCode:number;
     DriverId:number;
     LicensePlate:string;
-    DateOfTravel:string;
-    HourOfBegin:string;
-    constructor(TrackCode:number,TravelCode:number,DriverId:number,LicensePlate:string,DateOfTravel:string,HourOfBegin:string)
-    {
-        this.TrackCode=TrackCode;
-        this.TravelCode=TravelCode;
-        this.DriverId=DriverId;
-        this.LicensePlate=LicensePlate;
-        this.DateOfTravel=DateOfTravel;
-        this.HourOfBegin=HourOfBegin;
+    DateOfTravel:Time;
+    HourOfBegin:Time;
+    constructor(trackCode:number,travelCode:number,driverId:number,licensePlate:string,dateOfTravel:Time,hourOfBegin:Time){
+      this.TrackCode=trackCode;
+      this.TravelCode=travelCode;
+      this.DriverId=driverId;
+      this.LicensePlate=licensePlate;
+      this.DateOfTravel=dateOfTravel;
+      this.HourOfBegin=hourOfBegin; 
     }
 }

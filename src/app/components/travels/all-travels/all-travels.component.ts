@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Travel } from 'src/app/classes/Travel';
+import { Track } from 'src/app/classes/Track';
 import { ServerService } from 'src/app/service/server.service';
 
 @Component({
@@ -9,15 +10,26 @@ import { ServerService } from 'src/app/service/server.service';
 })
 export class AllTravelsComponent implements OnInit {
 travels:Travel[];
-  constructor(private ts:ServerService) {
-    this.ts.byGet("Travel").subscribe(data=>{
-      this.travels=data;
-      console.log(this.travels)
-    });
-   }
+tracks:Track[];
+  constructor(private server:ServerService) { }
 
   ngOnInit() {
-
+    this.travels=[];
+    this.server.byGet("Travel").subscribe(data => {
+    this.travels=data;
+    console.log(this.travels);
+    
+  });
+  this.tracks=[];
+    this.server.byGet("Track").subscribe(data => {
+    this.tracks=data;
+    console.log(this.tracks);
+  });
   }
+  OnMouseOver(id:number)
+{
+  this.server.getByParmater("Track",id).subscribe(data=> 
+    {this.tracks=data; console.log("succeed")});  
+}
 
 }

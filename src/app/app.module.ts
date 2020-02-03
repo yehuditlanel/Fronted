@@ -82,6 +82,8 @@ import { EditTrackComponent } from './components/tracks/edit-track/edit-track.co
     DetailVehicleComponent,
     EditVehicleComponent,
     ListVehicleComponent,
+    AllTrackComponent,
+    ListTrackComponent,
     ListPassengersComponent,
     AllPassengersComponent,
     AllTrackComponent,

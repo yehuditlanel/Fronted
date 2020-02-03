@@ -12,7 +12,8 @@ export class AddCustomerComponent implements OnInit {
 @Output() addCustomer=new  EventEmitter<Customer>();
 @ViewChild ("customerForm",{static:true})form:NgForm;
 newCustomer:Customer;
-constructor(private cs:ServerService) { this.newCustomer= new Customer("","",0,""); }
+constructor(private cs:ServerService) { this.newCustomer= new Customer(0,"","",""); }
+
   onSubmitForm(form:NgForm){
     this.addCustomer.emit(this.newCustomer);
     this.cs.addObject("Customer",this.newCustomer);

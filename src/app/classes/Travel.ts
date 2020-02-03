@@ -1,18 +1,21 @@
+import { Time } from '@angular/common';
+
 export class Travel{
     TravelCode:number;
-    CollectionOrDispersing:string
+    CollectionOrDispersing:string;
     DestinationOrSource:string;
-    Hour:string
+    Hour:Time;
     Frequency:string;
-    DateOfBegin:string;
-    DateOfEnd:string;
-    constructor(TravelCode:number,CollectionOrDispersing:string,DestinationOrSource:string,Hour:string,Frequency:string,DateOfBegin:string,DateOfEnd:string){
-        this.TravelCode=TravelCode;
-        this.CollectionOrDispersing=CollectionOrDispersing;
-        this.DestinationOrSource=DestinationOrSource;
-        this.Hour=Hour;
-        this.Frequency=Frequency;
-        this.DateOfBegin=DateOfBegin;
-        this.DateOfEnd=DateOfEnd;
-    }
+    DateOfBegin:Date;
+    DateOfEnd:Date;
+    constructor(travelCode:number,collectionOrDispersing:string,destinationOrSource:string,hour:Time,frequency:string,dateOfBegin:Date,dateOfEnd:Date){
+       this.TravelCode=travelCode;
+       this.CollectionOrDispersing=collectionOrDispersing;
+       this.DestinationOrSource=destinationOrSource;
+       this.Hour=hour;
+       this.Frequency=frequency;
+       this.DateOfBegin=dateOfBegin;
+       this.DateOfEnd=dateOfEnd;
+
+}
 }

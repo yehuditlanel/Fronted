@@ -15,11 +15,7 @@ export class CustomerComponent{
   //this.customers.push(new Customer("1","chaim","0533139132","seminar"));
 }
 ngOnInit() {
-  //this.newCostumer=new Customer("2222","moti","0533132123","fff");
-  // this.cs.updateCustomer(this.newCostumer);
-  // this.cs.addObject("Customer",this.newCostumer);
-  // this.cs.deleteObject("Customer",2222);
-  //this.cs.addCustomer(this.newCostumer);
+
   this.cs.byGet("Customer").subscribe(data => {
     this.customers=data;
     console.log(this.customers);
