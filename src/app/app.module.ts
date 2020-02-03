@@ -44,9 +44,6 @@ import { EditVehicleComponent } from './components/vehicles/edit-vehicle/edit-ve
 import { ListVehicleComponent } from './components/vehicles/list-vehicle/list-vehicle.component';
 import { ListPassengersComponent } from './components/passengers/list-passengers/list-passengers.component';
 import { AllPassengersComponent } from './components/passengers/all-passengers/all-passengers.component';
-import { AllTrackComponent } from './components/tracks/all-track/all-track.component';
-import { ListTrackComponent } from './components/tracks/list-track/list-track.component';
-import { EditTrackComponent } from './components/tracks/edit-track/edit-track.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,13 +79,8 @@ import { EditTrackComponent } from './components/tracks/edit-track/edit-track.co
     DetailVehicleComponent,
     EditVehicleComponent,
     ListVehicleComponent,
-    AllTrackComponent,
-    ListTrackComponent,
     ListPassengersComponent,
     AllPassengersComponent,
-    AllTrackComponent,
-    ListTrackComponent,
-    EditTrackComponent,
   ],
   imports: [
     BrowserModule,FormsModule,

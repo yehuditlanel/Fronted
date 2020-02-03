@@ -16,7 +16,7 @@
     <span class="col-6" >
 <ul  class="container list-group list-group-flush">
   <li  *ngFor="let item of tracks" class="row mb-3    border border-right-0 border-left-0" > 
-    <span  class="col-3 offset-7  mt-3 mb-3" >{{item.TrackCode}}</span>
+    <button  class="col-3 offset-7  mt-3 mb-3" (click)="view(item.TrackCode)">{{item.TrackCode}}</button>
     </li>
 </ul>
 
