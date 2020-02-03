@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Travel } from 'src/app/classes/Travel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-travels',
@@ -6,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-travels.component.css']
 })
 export class ListTravelsComponent implements OnInit {
-
-  constructor() { }
-
+  @Input()travel:Travel;
+  constructor(private router:Router) { }
+OnMouseOver(id:string)
+{
+  alert(id);
+  alert("MouseOver");
+  alert(this.travel.TravelCode);
+  
+ //this.router.navigate(['/track',id]);
+  
+}
   ngOnInit() {
   }
 

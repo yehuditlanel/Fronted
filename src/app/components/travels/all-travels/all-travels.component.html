@@ -1,1 +1,26 @@
-<p>all-travels works!</p>
+<body class="ml-5 mr-5 " style="text-align: center;" dir="rtl">
+    <div class="row">
+        <span class="col-6">נסיעות</span>
+        <span class="col-6">מסלולים לנסיעה</span>
+    </div>
+    <div class="row" >
+  
+    <span class="col-6">
+      <ul  class="container list-group list-group-flush">
+        <li *ngFor="let item of travels"  class="row mb-3    border border-right-0 border-left-0" > 
+          <span  class="col-3 offset-7  mt-3 mb-3" >{{item.DestinationOrSource}}</span>
+          <span class="col-2  mt-3 mb-3"><mat-icon (mouseover)="OnMouseOver(item.TravelCode)">keyboard_arrow_left</mat-icon></span>
+          </li>
+      </ul>
+    </span>
+    <span class="col-6" >
+<ul  class="container list-group list-group-flush">
+  <li  *ngFor="let item of tracks" class="row mb-3    border border-right-0 border-left-0" > 
+    <span  class="col-3 offset-7  mt-3 mb-3" >{{item.TrackCode}}</span>
+    </li>
+</ul>
+
+</span> 
+    <br>
+</div>
+</body>‏

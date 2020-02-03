@@ -1,1 +1,15 @@
-<p>list-travels works!</p>
+<!-- <body  dir="rtl"> -->
+    <ul  class="container list-group list-group-flush">
+      <li   class="row mb-3    border border-right-0 border-left-0" > 
+        <span  class="col-3 offset-7  mt-3 mb-3" >{{travel.DestinationOrSource}}</span>
+        <!-- icon arrow to display the tracks -->
+        <span class="col-2  mt-3 mb-3"><mat-icon (mouseover)="OnMouseOver(travel.TravelCode)">keyboard_arrow_left</mat-icon></span>
+        </li>
+    </ul>
+    <!-- <div  class="container list-group list-group-flush">
+        <div   class="row mb-3    border border-right-0 border-left-0" > 
+          <span  class="col-3 offset-5  mt-3 mb-3" >{{travel.TravelCode}}</span>
+          <span class="col-4  mt-3 mb-3">icon arrow to display the tracks</span>
+        </div>
+    </div> -->
+  <!-- </body> -->

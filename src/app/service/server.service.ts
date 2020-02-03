@@ -20,6 +20,9 @@ export class ServerService {
   deleteObject(url:string, id:string){
     this.server.delete(this.path+url+'/'+id).subscribe();
   }
+  deleteObjectByNumber(url:string, id:number){
+    this.server.delete(this.path+url+'/'+id).subscribe();
+  }
   updateObject(url:string,object:any){
       this.server.put(this.path+url,object).subscribe();
     }
@@ -28,4 +31,8 @@ export class ServerService {
      this.users=new User("aaa",1,"bbb","cc","Admin");
       this.server.post(this.path+url,this.users).subscribe();
     } 
+    
+getByParmater(url:string,t:number){
+  return this.server.get<any[]>(this.path+url+'?'+"travelCode="+t);
+}
 }

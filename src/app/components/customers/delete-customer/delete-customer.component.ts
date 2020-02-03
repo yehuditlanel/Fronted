@@ -26,12 +26,13 @@ import { ServerService } from 'src/app/service/server.service';
 export class DeleteCustomerComponent implements OnInit {
 
   constructor(private server:ServerService,private route:ActivatedRoute,private router:Router) {}
-customer:Customer=new Customer("","","");
+customer:Customer=new Customer(null,"","","");
 
 
   ngOnInit() {
     this.route.params.subscribe(
       params=>{
+        this.customer.Group_s_code=params.Group_s_code
         this.customer.Conected_name=params.Conected_name
         this.customer.Conected_phone=params.Conected_phone
         this.customer.Group_s_name=params.Group_s_name
@@ -42,7 +43,8 @@ customer:Customer=new Customer("","","");
     this.router.navigate(['/customers']);
   }
   onSubmitForm(){
-    this.server.deleteObject("Customer",this.customer.Group_s_code);
+    ////need to send identity because eed know what to delete
+    this.server.deleteObjectByNumber("Customer",this.customer.Group_s_code);
      //this.server.deleteObject("Customer",(this.customer.Group_s_code);
       //this.router.navigate(['/customers']);
    

@@ -42,6 +42,10 @@ import { DeleteVehicleComponent } from './components/vehicles/delete-vehicle/del
 import { DetailVehicleComponent } from './components/vehicles/detail-vehicle/detail-vehicle.component';
 import { EditVehicleComponent } from './components/vehicles/edit-vehicle/edit-vehicle.component';
 import { ListVehicleComponent } from './components/vehicles/list-vehicle/list-vehicle.component';
+
+import { AllTrackComponent } from './components/tracks/all-track/all-track.component';
+import { ListTrackComponent } from './components/tracks/list-track/list-track.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +81,8 @@ import { ListVehicleComponent } from './components/vehicles/list-vehicle/list-ve
     DetailVehicleComponent,
     EditVehicleComponent,
     ListVehicleComponent,
+    AllTrackComponent,
+    ListTrackComponent,
   ],
   imports: [
     BrowserModule,FormsModule,

@@ -11,13 +11,14 @@ import { ServerService } from 'src/app/service/server.service';
 export class EditCustomerComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,private router:Router,private cs:ServerService) {}
-customer:Customer=new Customer("vv","vv","vvv");
+customer:Customer=new Customer(null,"vv","vv","vvv");
 
 
   ngOnInit() {
     console.log(this.route.params);
     this.route.params.subscribe(
       params=>{
+        this.customer.Group_s_code=params.Group_s_code
         this.customer.Conected_name=params.Conected_name
         this.customer.Conected_phone=params.Conected_phone
         this.customer.Group_s_name=params.Group_s_name
