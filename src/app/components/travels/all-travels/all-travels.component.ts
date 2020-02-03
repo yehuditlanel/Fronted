@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Travel } from 'src/app/classes/Travel';
-import { Router } from '@angular/router';
 import { Track } from 'src/app/classes/Track';
 import { ServerService } from 'src/app/service/server.service';
 
@@ -12,7 +11,7 @@ import { ServerService } from 'src/app/service/server.service';
 export class AllTravelsComponent implements OnInit {
 travels:Travel[];
 tracks:Track[];
-  constructor(private server:ServerService,private router:Router) { }
+  constructor(private server:ServerService) { }
 
   ngOnInit() {
     this.travels=[];

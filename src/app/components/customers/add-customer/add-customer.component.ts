@@ -13,6 +13,7 @@ export class AddCustomerComponent implements OnInit {
 @ViewChild ("customerForm",{static:true})form:NgForm;
 newCustomer:Customer;
 constructor(private cs:ServerService) { this.newCustomer= new Customer(0,"","",""); }
+
   onSubmitForm(form:NgForm){
     this.addCustomer.emit(this.newCustomer);
     this.cs.addObject("Customer",this.newCustomer);
@@ -23,4 +24,3 @@ constructor(private cs:ServerService) { this.newCustomer= new Customer(0,"","","
   }
   
 }
-

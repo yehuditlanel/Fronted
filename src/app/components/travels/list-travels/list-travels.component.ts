@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-travels.component.css']
 })
 export class ListTravelsComponent implements OnInit {
+
   @Input()travel:Travel;
   constructor(private router:Router) { }
 OnMouseOver(id:string)
@@ -17,7 +18,8 @@ OnMouseOver(id:string)
   alert(this.travel.TravelCode);
   
  //this.router.navigate(['/track',id]);
-  
+
+
 }
   ngOnInit() {
   }

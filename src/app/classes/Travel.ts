@@ -16,5 +16,6 @@ export class Travel{
        this.Frequency=frequency;
        this.DateOfBegin=dateOfBegin;
        this.DateOfEnd=dateOfEnd;
-    }
+
+}
 }
