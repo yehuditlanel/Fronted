@@ -8,7 +8,7 @@
     </mat-autocomplete>
   </mat-form-field>
 </form> -->
-<app-list-customers *ngFor="let item of customers;let i=index" [customer]="item"></app-list-customers>
+<!-- <app-list-customers *ngFor="let item of customers;let i=index" [customer]="item"></app-list-customers> -->
 <!-- <body>
 <div class="container">
   <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo" (click)="showDropdown=!showDropdown" >Simple collapsible</button>
@@ -20,4 +20,19 @@
 </div>
 </body> -->
 
-<app-add-customer (addCustomer)="onCustomerAdded($event)"></app-add-customer>
+<!-- <app-add-customer (addCustomer)="onCustomerAdded($event)"></app-add-customer> -->
+
+<body class="mydir ml-5 mr-5 " dir="rtl">
+  <div class="row">
+    <div class="main">
+    <div class="form-group has-search">
+      <span class="fa fa-search form-control-feedback"><mat-icon>search</mat-icon></span>
+      <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="חיפוש">
+    </div>
+  </div>
+  <!-- <span class="col-10"><input  placeholder="חיפוש"  [(ngModel)]="searchText" class="form-control container body-content"></span> -->
+  <span class="col-2" > <app-add-customer (addCustomer)="onCustomerAdded($event)"></app-add-customer></span>
+</div>
+  <br>
+  <app-list-customers *ngFor="let item of customers" [customer]="item"></app-list-customers>
+</body>‏

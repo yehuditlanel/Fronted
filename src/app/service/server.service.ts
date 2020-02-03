@@ -12,7 +12,10 @@ export class ServerService {
   path="http://localhost:55750/api/";
   constructor(private server:HttpClient) { }
   getByParmater(url:string,p:number){
-    return this.server.get<any[]>(this.path+url+'/'+p);
+    return this.server.get<any[]>(this.path+url+'?'+"travelCode="+p);
+  }
+  getByParmater1(url:string,p:number){
+    return this.server.get<any[]>(this.path+url+'?'+"trackCode="+p);
   }
   byGet(url:string):Observable<any[]>{
     return this.server.get<any[]>(this.path+url);

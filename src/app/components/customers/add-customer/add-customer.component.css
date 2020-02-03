@@ -41,6 +41,10 @@
   h4{
     color: #FFC107;
   }
+  .mat-fab{
+    background-color: #FFC107;
+    outline: none;
+  }
   /* Add Zoom Animation */
   .animate {
     -webkit-animation: animatezoom 0.6s;

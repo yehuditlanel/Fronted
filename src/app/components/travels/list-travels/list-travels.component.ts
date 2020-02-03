@@ -11,9 +11,8 @@ export class ListTravelsComponent implements OnInit {
 
   constructor(private router:Router) { }
 @Input()travel:Travel;
-updateCustomer(){
-  this.router.navigate(['/edit',this.travel])
-   // this.router.navigateByUrl(['/customers',this.customers[i]])
+viewTrack(){
+  this.router.navigate(['/viewTrack',this.travel.TravelCode])
 }
 deleteCustomer(){
   this.router.navigate(['/delete',this.travel])

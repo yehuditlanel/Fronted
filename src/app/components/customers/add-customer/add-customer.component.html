@@ -1,10 +1,10 @@
 <!-- Button to open the modal driver form -->
-<button onclick="document.getElementById('addCustomer').style.display='block'">הוסף לקוח</button>
+<button mat-fab onclick="document.getElementById('addCustomer').style.display='block'"><mat-icon>add</mat-icon></button>
 
 <!-- The Modal -->
 <div id="addCustomer" class="modal">
   <!-- Modal Content -->
-  <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #customerForm="ngForm">
+  <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #customerForm="ngForm" align="center">
     <div class="modal-header">
       <h4 class="modal-title w-100" id="myModalLabel">הוספת לקוח</h4>
       <span onclick="document.getElementById('addCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>

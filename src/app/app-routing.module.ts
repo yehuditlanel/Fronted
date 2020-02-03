@@ -13,6 +13,7 @@ import { AllTravelsComponent } from './components/travels/all-travels/all-travel
 import { AllVehicleComponent } from './components/vehicles/all-vehicle/all-vehicle.component';
 import { DeleteVehicleComponent } from './components/vehicles/delete-vehicle/delete-vehicle.component';
 import { EditVehicleComponent } from './components/vehicles/edit-vehicle/edit-vehicle.component';
+import { AllTrackComponent } from './components/tracks/all-track/all-track.component';
 
 const routes: Routes = [
   { path: '', component:  LoginComponent},
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'deleteVehicle',component:DeleteVehicleComponent,children:[
     {path:':id',component:DeleteVehicleComponent},
   ]},
+  {path:'viewTrack/:id',component:AllTrackComponent},
   { path: 'travel', component:  AllTravelsComponent},
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/not-found'}

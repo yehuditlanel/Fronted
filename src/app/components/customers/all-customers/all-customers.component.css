@@ -7,3 +7,32 @@
   .example-full-width {
     width: 100%;
   }
+
+  input:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: gray;
+    box-shadow: 0 0 0 4px rgba(122, 122, 113, 0.4); 
+  }
+
+.has-search .form-control {
+  /* padding-left: 2.375rem; */
+  padding-inline-start: 2.5rem;
+  padding-top: 0.2rem;
+}
+.main {
+  width: 75%;
+  margin: 10px auto;
+}
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  padding-top: 0.4rem;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: rgb(65, 63, 63);
+}

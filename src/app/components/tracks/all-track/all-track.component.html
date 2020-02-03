@@ -1,0 +1,12 @@
+<p>נסיעה מספר:{{s}}</p>
+<h4>מסלולים:</h4>
+<br>
+<li *ngFor="let item of tracks">
+    <button (click)="view(item.TrackCode)">{{item.TrackCode}}</button>
+    <br>
+</li>
+<br><br>
+<li *ngFor="let item of passengers">
+    {{item.PassengerName}} {{item.PassengerAddress}}
+    <br>
+</li>
