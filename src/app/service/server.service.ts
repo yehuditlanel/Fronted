@@ -14,6 +14,10 @@ export class ServerService {
   getByParmater1(url:string,p:number){
     return this.server.get<any[]>(this.path+url+'?'+"trackCode="+p);
   }
+  //belongs to home component
+  getById(url:string,p:number){
+    return this.server.get<any[]>(this.path+url+p);
+  }
   byGet(url:string):Observable<any[]>{
     return this.server.get<any[]>(this.path+url);
   }

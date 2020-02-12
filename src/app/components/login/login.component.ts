@@ -1,43 +1,66 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { User } from 'src/app/classes/User';
-import { Router } from '@angular/router';
+import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService, } from 'src/app/service/authentication.service';
+import { first } from 'rxjs/operators';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  isShowErrText=false;
-  errText="";
-  myUser:User;
-  @ViewChild("loginForm",{static:true}) form:NgForm;
-  constructor(private route:Router) {
-    this.myUser= new User("",0,"","","");
-   }
+loginForm: FormGroup;
+    loading = false;
+    submitted = false;
+    returnUrl: string;
+    error = '';
 
-  ngOnInit() {
-  }
-  onSubmitForm(form:NgForm){
-    if (this.form.invalid) {
-      alert("the form is invalid!!!");
-      return;
+    constructor(
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router,
+        private authenticationService: AuthenticationService
+    ) { 
+        // redirect to home if already logged in
+        if (this.authenticationService.currentUserValue) { 
+            this.router.navigate(['/']);
+        }
     }
-    //הפעלת פונקציה שתבדוק נכונות השם והסיסמה
-  //response.//בודק האם חזר תשובה נכונה או שגיאה
-  this.isShowErrText=true;
-  if(this.isShowErrText!=true)
-    this.errText="the name/password is invalid";
-    else
-    {
-      this.errText="go to next page";
-      this.route.navigate(['driver',this.myUser.NameOfUser]);
+
+    ngOnInit() {
+        this.loginForm = this.formBuilder.group({
+            username: ['', Validators.required],
+            password: ['', Validators.required]
+        });
+
+        // get return url from route parameters or default to '/'
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
-    this.form.reset();
-    //...
+
+    // convenience getter for easy access to form fields
+    get f() { return this.loginForm.controls; }
+
+    onSubmit() {
+        this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.loginForm.invalid) {
+            return;
+        }
+
+        this.loading = true;
+        this.authenticationService.login(this.f.username.value, this.f.password.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.error = error;
+                    this.loading = false;
+                });
+    }
+
   }
-
-}
-
-
 

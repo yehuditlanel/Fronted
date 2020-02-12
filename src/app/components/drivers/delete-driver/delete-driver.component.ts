@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from 'src/app/classes/Customer';
 import { ServerService } from 'src/app/service/server.service';
 import { User } from 'src/app/classes/User';
+import { Role } from '@app/classes/Role';
 
 @Component({
     selector: 'app-delete-driver',
@@ -12,7 +13,7 @@ import { User } from 'src/app/classes/User';
   export class DeleteDriverComponent implements OnInit {
 
   constructor(private server:ServerService,private route:ActivatedRoute,private router:Router) {}
-driver:User=new User("",null,"","","Driver");
+driver:User=new User("",null,"","",Role.Driver);
 
 
   ngOnInit() {
@@ -20,7 +21,7 @@ driver:User=new User("",null,"","","Driver");
       params=>{
         this.driver.AddressOfUser=params.AddressOfUser
         this.driver.NameOfUser=params.NameOfUser
-        this.driver.Permition=params.Permition
+        this.driver.Role=params.Role
         this.driver.PhoneOfUser=params.PhoneOfUser
         this.driver.UserId=params.UserId
       }

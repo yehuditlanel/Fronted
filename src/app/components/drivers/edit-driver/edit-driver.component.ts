@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/classes/User';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServerService } from 'src/app/service/server.service';
+import { Role } from '@app/classes/Role';
 
 @Component({
   selector: 'app-edit-driver',
@@ -11,7 +12,7 @@ import { ServerService } from 'src/app/service/server.service';
 export class EditDriverComponent implements OnInit {
   driver:User
   constructor(private route:ActivatedRoute,private router:Router,private ds:ServerService) {
-    this.driver=new User("",null,"","","Driver");
+    this.driver=new User("",null,"","",Role.Driver);
 
   }
 
@@ -21,7 +22,7 @@ export class EditDriverComponent implements OnInit {
       params=>{
         this.driver.AddressOfUser=params.AddressOfUser
         this.driver.NameOfUser=params.NameOfUser
-        this.driver.Permition=params.Permition
+        this.driver.Role=params.Role
         this.driver.PhoneOfUser=params.PhoneOfUser
         this.driver.UserId=params.UserId
       }

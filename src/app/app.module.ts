@@ -44,6 +44,7 @@ import { EditVehicleComponent } from './components/vehicles/edit-vehicle/edit-ve
 import { ListVehicleComponent } from './components/vehicles/list-vehicle/list-vehicle.component';
 import { ListPassengersComponent } from './components/passengers/list-passengers/list-passengers.component';
 import { AllPassengersComponent } from './components/passengers/all-passengers/all-passengers.component';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,6 +82,7 @@ import { AllPassengersComponent } from './components/passengers/all-passengers/a
     ListVehicleComponent,
     ListPassengersComponent,
     AllPassengersComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,FormsModule,

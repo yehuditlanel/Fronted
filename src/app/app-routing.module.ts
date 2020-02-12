@@ -14,39 +14,111 @@ import { AllVehicleComponent } from './components/vehicles/all-vehicle/all-vehic
 import { DeleteVehicleComponent } from './components/vehicles/delete-vehicle/delete-vehicle.component';
 import { EditVehicleComponent } from './components/vehicles/edit-vehicle/edit-vehicle.component';
 import { AllPassengersComponent } from './components/passengers/all-passengers/all-passengers.component';
+import { AuthGuard } from './_helpers/auth.guard';
+import { Role } from './classes/Role';
 
 const routes: Routes = [
-  { path: '', component:  LoginComponent},
-  { path: 'driver/:name', component: DriverComponent },
-  { path: 'customers', component:  AllCustomersComponent,children:[
+  
+  { path: 'login', component:  LoginComponent},
+
+  { 
+    path: 'driver/:name', component: DriverComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+
+  { 
+    path: 'customers', component:  AllCustomersComponent,children:[
     {  path: ':id', component:  EditCustomerComponent},
-  ]},
-  { path: 'edit',component:EditCustomerComponent,children:[
+  ],
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+},
+
+  {
+     path: 'edit',component:EditCustomerComponent,children:[
     {path:':id',component:EditCustomerComponent},
-  ]},
-  { path: 'delete',component:DeleteCustomerComponent,children:[
+  ],
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] 
+    }
+},
+
+  { 
+    path: 'delete',component:DeleteCustomerComponent,children:[
     {path:':id',component:DeleteCustomerComponent},
-  ]},
-  { path: 'drivers', component:  AllDriversComponent,children:[
+  ],
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+},
+  { 
+    path: 'drivers', component:  AllDriversComponent,children:[
     {  path: ':id', component:  EditDriverComponent},
-  ]},
-  { path: 'editDriver',component:EditDriverComponent,children:[
+  ],
+  canActivate: [AuthGuard],
+  data: { roles: [Role.Admin] }
+},
+  { 
+    path: 'editDriver',component:EditDriverComponent,children:[
     {path:':id',component:EditDriverComponent},
-  ]},
-  { path: 'deleteDriver',component:DeleteDriverComponent,children:[
+  ],
+  canActivate: [AuthGuard],
+  data: { roles: [Role.Admin] }
+},
+
+  { 
+    path: 'deleteDriver',component:DeleteDriverComponent,children:[
     {path:':id',component:DeleteDriverComponent},
-  ]},
-  {path:'vehicles',component:AllVehicleComponent},
-  { path: 'editVehicle',component:EditVehicleComponent,children:[
+  ],
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+},
+
+  {
+    path:'vehicles',component:AllVehicleComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+
+  {
+     path: 'editVehicle',component:EditVehicleComponent,children:[
     {path:':id',component:EditVehicleComponent},
-  ]},
-  { path: 'deleteVehicle',component:DeleteVehicleComponent,children:[
+  ],
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+},
+
+  {
+     path: 'deleteVehicle',component:DeleteVehicleComponent,children:[
     {path:':id',component:DeleteVehicleComponent},
-  ]},
-  {path:'viewP/:id',component:AllPassengersComponent},
-  { path: 'travel', component:  AllTravelsComponent},
-  {path: 'not-found', component: PageNotFoundComponent},
-  {path: '**', redirectTo: '/not-found'}
+  ],
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+
+  {
+    path:'viewP/:id',component:AllPassengersComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+
+  { 
+    path: 'travel', component:  AllTravelsComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+
+  {
+    path: 'not-found', component: PageNotFoundComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  },
+  
+  {
+    path: '**', redirectTo: '/not-found',
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
+  }
 
 ];
 @NgModule({
