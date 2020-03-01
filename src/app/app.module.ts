@@ -46,6 +46,7 @@ import { ListPassengersComponent } from './components/passengers/list-passengers
 import { AllPassengersComponent } from './components/passengers/all-passengers/all-passengers.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction'
+// import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +84,7 @@ import { AgmDirectionModule } from 'agm-direction'
     ListVehicleComponent,
     ListPassengersComponent,
     AllPassengersComponent,
+    // HomeComponent,
   ],
   imports: [
     BrowserModule,FormsModule,

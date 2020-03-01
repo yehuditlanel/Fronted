@@ -24,5 +24,4 @@ export class AddDriverComponent implements OnInit {
 
     ngOnInit() {
     }
-
 }
