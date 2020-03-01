@@ -12,7 +12,7 @@ export class AllDriversComponent implements OnInit {
   constructor(private ds:ServerService){
   }
   onDriveAdded(data:User){
-    this.drivers.push(new User(data.NameOfUser,data.UserId,data.AddressOfUser,data.PhoneOfUser,data.Permition));
+    this.drivers.push(new User(data.NameOfUser,data.UserId,data.AddressOfUser,data.PhoneOfUser,data.Role));
   }
   ngOnInit() {
     this.drivers=[];

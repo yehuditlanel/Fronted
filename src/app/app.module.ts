@@ -44,6 +44,8 @@ import { EditVehicleComponent } from './components/vehicles/edit-vehicle/edit-ve
 import { ListVehicleComponent } from './components/vehicles/list-vehicle/list-vehicle.component';
 import { ListPassengersComponent } from './components/passengers/list-passengers/list-passengers.component';
 import { AllPassengersComponent } from './components/passengers/all-passengers/all-passengers.component';
+import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction'
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +93,11 @@ import { AllPassengersComponent } from './components/passengers/all-passengers/a
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatRippleModule
+    MatRippleModule,
+    AgmCoreModule,
+    AgmDirectionModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyCtdh-zFkVW7MUgWFvm9mfUTp4BA0Zd8qw'}) 
   ],
   providers: [ServerService],
   bootstrap: [AppComponent]

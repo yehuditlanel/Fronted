@@ -1,16 +1,30 @@
+<br>
 <form (ngSubmit)="onSubmitForm()" #loginForm="ngForm" class="text-center  from-horizontal">
     <label>
       שם משתמש
       <br>
-      <input class="form-group" name="userName" required [(ngModel)]="myUser.name_of_user" >
+      <mat-form-field>
+        <mat-label>הכנס שם משתמש</mat-label>
+        <input matInput name="userName" required [(ngModel)]="myUser.NameOfUser">
+        <mat-icon matPrefix>account_circle</mat-icon>
+      </mat-form-field>
+      <!-- <input  name="userName" required [(ngModel)]="myUser.NameOfUser" > -->
     </label>
     <br>
     <label>
       סיסמה
       <br>
-      <input type="password" [(ngModel)]="myUser.users_id" name="password" #pass="ngModel">
+      <mat-form-field >
+      <mat-label align="center">הכנס סיסמה</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="myUser.UserId" name="password" required>
+      <button class="outline" type="button" mat-icon-button matPrefix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
     </label>
+    <br>
     <br>
   <button type="submit" [disabled]="loginForm.invalid">כניסה</button>
 </form>
+<br><br>
 <div class="alert alert-danger text-center" *ngIf="isShowErrText">{{errText}}</div>

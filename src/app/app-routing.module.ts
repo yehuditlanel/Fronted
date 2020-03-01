@@ -14,6 +14,7 @@ import { AllVehicleComponent } from './components/vehicles/all-vehicle/all-vehic
 import { DeleteVehicleComponent } from './components/vehicles/delete-vehicle/delete-vehicle.component';
 import { EditVehicleComponent } from './components/vehicles/edit-vehicle/edit-vehicle.component';
 import { AllPassengersComponent } from './components/passengers/all-passengers/all-passengers.component';
+import { ListPassengersComponent } from './components/passengers/list-passengers/list-passengers.component';
 
 const routes: Routes = [
   { path: '', component:  LoginComponent},
@@ -44,6 +45,7 @@ const routes: Routes = [
     {path:':id',component:DeleteVehicleComponent},
   ]},
   {path:'viewP/:id',component:AllPassengersComponent},
+  {path:'gg',component:ListPassengersComponent},
   { path: 'travel', component:  AllTravelsComponent},
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/not-found'}
