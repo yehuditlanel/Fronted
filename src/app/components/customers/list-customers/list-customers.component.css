@@ -1,3 +1,8 @@
 a{
-    color: #ffc107
+    color: #ffc107;
 }
+
+
+::ng-deep .mat-tooltip {
+    background: rgb(93, 94, 93) !important;
+    font-size: 14px;}

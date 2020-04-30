@@ -12,10 +12,13 @@ export class ListVehicleComponent implements OnInit {
 @Input()vehicle:Vehicle;
 
 updateVehicle(){
-  this.router.navigate(['/editVehicle',this.vehicle])
+  this.router.navigate(['/editVehicle/:id',this.vehicle])
 }
 deleteVehicle(){
-  this.router.navigate(['/deleteVehicle',this.vehicle]);
+  this.router.navigate(['/deleteVehicle/:id',this.vehicle]);
+}
+detialVehicle(){
+  this.router.navigate(['/detailVehicle/:id',this.vehicle])
 }
   ngOnInit() {
   }

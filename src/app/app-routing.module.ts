@@ -14,38 +14,30 @@ import { AllVehicleComponent } from './components/vehicles/all-vehicle/all-vehic
 import { DeleteVehicleComponent } from './components/vehicles/delete-vehicle/delete-vehicle.component';
 import { EditVehicleComponent } from './components/vehicles/edit-vehicle/edit-vehicle.component';
 import { AllPassengersComponent } from './components/passengers/all-passengers/all-passengers.component';
-import { ListPassengersComponent } from './components/passengers/list-passengers/list-passengers.component';
+import { AddTravelComponent } from './components/travels/add-travel/add-travel.component';
+import { DetialCustomerComponent } from './components/customers/detial-customer/detial-customer.component';
+import { DetailVehicleComponent } from './components/vehicles/detail-vehicle/detail-vehicle.component';
+import { TrackComponent } from './components/track/track.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  { path: '', component:  LoginComponent},
+  { path: 'login', component:  LoginComponent},
+  { path:'',component:HomeComponent},
   { path: 'driver/:name', component: DriverComponent },
-  { path: 'customers', component:  AllCustomersComponent,children:[
-    {  path: ':id', component:  EditCustomerComponent},
-  ]},
-  { path: 'edit',component:EditCustomerComponent,children:[
-    {path:':id',component:EditCustomerComponent},
-  ]},
-  { path: 'delete',component:DeleteCustomerComponent,children:[
-    {path:':id',component:DeleteCustomerComponent},
-  ]},
-  { path: 'drivers', component:  AllDriversComponent,children:[
-    {  path: ':id', component:  EditDriverComponent},
-  ]},
-  { path: 'editDriver',component:EditDriverComponent,children:[
-    {path:':id',component:EditDriverComponent},
-  ]},
-  { path: 'deleteDriver',component:DeleteDriverComponent,children:[
-    {path:':id',component:DeleteDriverComponent},
-  ]},
+  { path: 'track/:id', component: TrackComponent },
+  { path: 'customers', component:  AllCustomersComponent},
+  { path: 'edit/:id',component:EditCustomerComponent},
+  { path: 'delete:/id',component:DeleteCustomerComponent},
+  { path: 'detailCustomer/:id',component:DetialCustomerComponent},
+  { path: 'drivers', component:  AllDriversComponent},
+  { path: 'editDriver/:idD',component:EditDriverComponent},
+  { path: 'deleteDriver/:id',component:DeleteDriverComponent},
   {path:'vehicles',component:AllVehicleComponent},
-  { path: 'editVehicle',component:EditVehicleComponent,children:[
-    {path:':id',component:EditVehicleComponent},
-  ]},
-  { path: 'deleteVehicle',component:DeleteVehicleComponent,children:[
-    {path:':id',component:DeleteVehicleComponent},
-  ]},
+  { path: 'editVehicle/:id',component:EditVehicleComponent},
+  { path: 'deleteVehicle/:id',component:DeleteVehicleComponent},
+  { path: 'detailVehicle/:id',component:DetailVehicleComponent},
   {path:'viewP/:id',component:AllPassengersComponent},
-  {path:'gg',component:ListPassengersComponent},
+  {path:'gg',component:AddTravelComponent},
   { path: 'travel', component:  AllTravelsComponent},
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/not-found'}

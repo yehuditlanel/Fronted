@@ -11,11 +11,10 @@ export class ListDriversComponent implements OnInit {
   @Input()driver:User;
   constructor(private router:Router) { }
   updateDriver(){
-    this.router.navigate(['/editDriver',this.driver])
-     // this.router.navigateByUrl(['/customers',this.customers[i]])
+    this.router.navigate(['/editDriver/:idD',this.driver])
   }
   deleteDriver(){
-    this.router.navigate(['/deleteDriver',this.driver])
+    this.router.navigate(['/deleteDriver/:id',this.driver])
   }
   ngOnInit() {
   }

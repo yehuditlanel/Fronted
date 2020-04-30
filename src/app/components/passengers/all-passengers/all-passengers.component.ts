@@ -20,9 +20,13 @@ export class AllPassengersComponent implements OnInit {
   zoom:number = 15; 
   addresses:Array<string>; 
   result:any;
+  origin
+  destination
+  waypoints = []  
   constructor(private ps:ServerService,private route:ActivatedRoute) {
    }
   ngOnInit() {
+    this.waypoints=[];
     this.addresses=[];
     this.route.params.subscribe(params=>
       this.trackCode=params.id)
@@ -30,32 +34,32 @@ export class AllPassengersComponent implements OnInit {
       this.passengers=data;
       for(var i = 0; i < this.passengers.length; i++) {
         this.addresses.push(this.passengers[i].PassengerAddress);
-        this.findLocation(this.passengers[i].PassengerAddress);
+        this.findLocation(this.passengers[i].PassengerAddress,i);
       }
       console.log(this.addresses);
     console.log(this.passengers);});   
   }
   // הפונקציה שמקבלת את הכתובת ושולחת לסרביס
-  findLocation(address:string): void {
+  findLocation(address:string,i:number): void {
     var addressToSend = address.split(' ').join('+');// מחליפה את הרווחים ב +
     console.log(addressToSend)
     this.ps.getLocation(addressToSend)
     .subscribe(res => {
         this.result = res.results[0].geometry.location; // הגישה לנקודות ציון
-      // שינוי התצוגה לנקודות ציון שחזרו - שנוכל לראות אותם
-      this.latitude = this.result.lat;
-      this.longitude = this.result.lng;
-      console.log(this.result);
-      //יצירת מארקר חדש והוספה שלו לרשימת המארקרים
-      var newMarker: marker = {
-        lat: this.result.lat,
-		    lng: this.result.lng,
-		    label: this.result.location,
-		    draggable: true
-      }
-      this.markers.push(newMarker);
-      // הצגת הנקודות
-      this.result = JSON.stringify(this.result);
+        console.log(this.result);
+     // this.result = JSON.stringify(this.result);
+     var someObj = {location:{lat:this.result.lat,lng:this.result.lng}}
+     if(i==0){
+       this.origin=someObj;
+       this.destination=someObj
+     }
+     else if(i==this.passengers.length-1){
+       this.destination=someObj
+     }
+     else{
+       this.waypoints.push(someObj);
+     }
+      console.log(this.waypoints)
       });
 }
 }

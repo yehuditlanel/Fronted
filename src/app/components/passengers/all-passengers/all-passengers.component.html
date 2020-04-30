@@ -1,21 +1,4 @@
-<body class="ml-5 mr-5 " style="text-align: center;" dir="rtl">
-    <div class="row">
-        <span class="col-3">
-            <li  *ngFor='let item of passengers' align="right" >
-                {{item.PassengerName}} {{item.PassengerAddress}}
-            <br>
-            </li>
-        </span>
-        
-        <agm-map class="col-9" [latitude]='latitude' [longitude]='longitude' [zoom]='zoom'>
-            <agm-marker 
-      *ngFor="let m of markers; let i = index"
-      [latitude]="m.lat"
-      [longitude]="m.lng"
-      [label]="m.label"
-      [markerDraggable]="m.draggable">
-  </agm-marker>
-           
-        </agm-map>
-    </div>
-</body>
+<agm-map >
+    <agm-direction [waypoints]='waypoints'[origin]="origin" [destination]="destination">
+    </agm-direction>
+  </agm-map>

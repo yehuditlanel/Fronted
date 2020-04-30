@@ -1,1 +1,20 @@
-<p>detail-vehicle works!</p>
+  <form >
+    <div class="modal-header">
+      <h4 class="modal-title w-100" id="myModalLabel">פרטי רכב</h4>
+    </div>
+    <div class="container">
+      <label for="LicensePlate"><b> מספר רישוי</b></label><br>
+      {{vehicle.License_plate}}
+      <br>
+      <label for="Type"><b>סוג רכב</b></label><br>
+      {{vehicle.Type}}
+      <br>
+      <label for="Several_places"><b>  מספר מקומות  </b></label><br>
+      {{vehicle.Several_places}}
+      <br>
+      <label for="Quantity_of_fuel_per_km"><b>כמות דלק לק"מ</b></label><br>
+      {{vehicle.Quantity_of_fuel_per_km}}
+      <br><br>
+      <button (click)="viewTrack()">נסיעות לכלי רכב זה</button>
+    </div>
+  </form>

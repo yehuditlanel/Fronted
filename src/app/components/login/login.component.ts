@@ -38,7 +38,7 @@ f(){
     if(this.userFromDB.Role==Role.Driver)
     {
       localStorage.setItem("currentUser",this.userFromDB.UserId.toString())
-      this.route.navigate(['driver',this.userFromDB.NameOfUser]);
+      this.route.navigate(['track',this.userFromDB.UserId]);
     }
     else{
       if(this.userFromDB.Role==Role.Admin||this.userFromDB.Role==Role.Secretary)

@@ -8,9 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class ListPassengersComponent implements OnInit {
 
   constructor() { }
-//   public lat: Number = 31.8174961
-// public lng: Number = 35.1966627
-
 origin =  { lat: 31.8153471, lng: 35.1910237 }
   destination ={ lat: 31.768319, lng: 35.21371 }
   waypoints = [

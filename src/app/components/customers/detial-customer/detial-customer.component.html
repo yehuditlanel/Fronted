@@ -1,3 +1,19 @@
-<p>
-  detial-customer works!
-</p>
+  <form class="modal-content animate">
+    <div class="modal-header">
+      <h4 class="modal-title w-100" >פרטי לקוח</h4>
+    </div>
+    <div class="container">
+      <label for="conectedName"><b>  שם איש קשר  </b></label><br>
+      {{customer.Conected_name}}
+      <br>
+      <label for="conectedPhone"><b>טלפון איש קשר</b></label><br>
+      {{customer.Conected_phone}}
+      <br>
+      <label for="group_s_name"><b>שם קבוצה</b></label><br>
+      {{customer.Group_s_name}}
+      <br><br>
+      <button type="button" onclick="viewtravels()">נסיעות לקוח</button>
+
+      
+    </div>
+  </form>

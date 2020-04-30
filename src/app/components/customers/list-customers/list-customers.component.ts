@@ -12,11 +12,13 @@ export class ListCustomersComponent implements OnInit {
   constructor(private router:Router) { }
 @Input()customer:Customer;
 updateCustomer(){
-  this.router.navigate(['/edit',this.customer])
-   // this.router.navigateByUrl(['/customers',this.customers[i]])
+  this.router.navigate(['/edit/:id',this.customer])
 }
 deleteCustomer(){
-  this.router.navigate(['/delete',this.customer])
+  this.router.navigate(['/delete:/id',this.customer])
+}
+detailsCustomer(){
+  this.router.navigate(['/detailCustomer/:id',this.customer])
 }
   ngOnInit() {
   }

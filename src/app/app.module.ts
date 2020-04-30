@@ -24,12 +24,32 @@ import { DeleteDriverComponent } from './components/drivers/delete-driver/delete
 import { DetialDriverComponent } from './components/drivers/detial-driver/detial-driver.component';
 import { EditDriverComponent } from './components/drivers/edit-driver/edit-driver.component';
 import { ListDriversComponent } from './components/drivers/list-drivers/list-drivers.component';
-import { MatSliderModule } from '@angular/material/slider';
-import {MatIconModule} from '@angular/material/icon';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
+import {
+  MatToolbarModule,
+  MatSliderModule,
+  MatAutocompleteModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatIconModule,
+  MatTooltipModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatListModule,
+  MatExpansionModule,
+  MatDividerModule,
+  MatCheckboxModule,
+  MatDialogModule,
+  MatDatepickerModule, 
+  MatNativeDateModule,
+  MatSelectModule,
+  MatSnackBarModule,
+  MatRippleModule,
+} from '@angular/material';
 import { AddTravelComponent } from './components/travels/add-travel/add-travel.component';
 import { EditTravelComponent } from './components/travels/edit-travel/edit-travel.component';
 import { AllTravelsComponent } from './components/travels/all-travels/all-travels.component';
@@ -45,8 +65,11 @@ import { ListVehicleComponent } from './components/vehicles/list-vehicle/list-ve
 import { ListPassengersComponent } from './components/passengers/list-passengers/list-passengers.component';
 import { AllPassengersComponent } from './components/passengers/all-passengers/all-passengers.component';
 import { AgmCoreModule } from '@agm/core';
-import { AgmDirectionModule } from 'agm-direction'
+import { AgmDirectionModule } from 'agm-direction';
+import { TrackComponent } from './components/track/track.component'
 // import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +107,8 @@ import { AgmDirectionModule } from 'agm-direction'
     ListVehicleComponent,
     ListPassengersComponent,
     AllPassengersComponent,
+    TrackComponent,
+    HomeComponent,
     // HomeComponent,
   ],
   imports: [
@@ -97,11 +122,12 @@ import { AgmDirectionModule } from 'agm-direction'
     MatInputModule,
     MatRippleModule,
     AgmCoreModule,
+    MatTooltipModule,
     AgmDirectionModule,
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyCtdh-zFkVW7MUgWFvm9mfUTp4BA0Zd8qw'}) 
   ],
-  providers: [ServerService],
+  providers: [ServerService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
