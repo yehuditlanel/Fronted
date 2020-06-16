@@ -10,5 +10,6 @@
   <span class="col-2" > <app-add-customer (addCustomer)="onCustomerAdded($event)"></app-add-customer></span>
 </div>
   <br>
+  <mat-spinner style="margin:0 auto;" *ngIf="isLoadingResults" diameter="42"></mat-spinner>
   <app-list-customers *ngFor="let item of customers" [customer]="item"></app-list-customers>
 </body>‏

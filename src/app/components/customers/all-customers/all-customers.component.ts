@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/classes/Customer';
 import { ServerService } from 'src/app/service/server.service';
 import { Router } from '@angular/router';
+import { ThemePalette } from '@angular/material';
 /////////////////////////////////////////////
 //import {FormControl} from '@angular/forms';
 //import {Observable} from 'rxjs';
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class AllCustomersComponent implements OnInit {
   customers:Customer[];
+  isLoadingResults = true;
   //////////////////////////
   //myControl = new FormControl();
   //options: string[] = ['One', 'Two', 'Three',"On"];
@@ -28,6 +30,7 @@ p(){
     this.customers=[];
     this.cs.byGet("Customer").subscribe(data => {
     this.customers=data;
+    this.isLoadingResults=false;
     console.log(this.customers);
   });
   }

@@ -3,7 +3,11 @@
     max-width: 500px;
     width: 100%;
   }
-  
+  .mat-spinner
+    ::ng-deep circle {
+        stroke: gray;
+    }
+
   .example-full-width {
     width: 100%;
   }
