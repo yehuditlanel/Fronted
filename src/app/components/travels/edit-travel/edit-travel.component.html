@@ -1,1 +1,22 @@
 <p>edit-travel works!</p>
+<div class="modal" id="editTravel">
+    <form class="modal-content animate"action="/action_page.php" (ngSubmit)="onSubmitForm()" #editForm="ngForm">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" >עריכת נסיעה</h4>
+        <span (click)="cancel()" onclick="document.getElementById('editTravel').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div class="container">
+        <label for="groupName"><b>שם קבוצה</b></label><br>
+        <input type="text" name="groupName" [(ngModel)]="travel.GroupName" required>
+        <br>
+        <label for="collectionOrDispersing"><b>איסוף/פיזור</b></label><br>
+        <input  name="collectionOrDispersing" [(ngModel)]="travel.CollectionOrDispersing" >
+        <br>
+        <label for="destinationOrSource"><b>כתובת מקור/יעד</b></label><br>
+        <input  name="destinationOrSource" [(ngModel)]="travel.DestinationOrSource" >
+        <br><br>
+        <button type="submit" > אישור</button>
+        <br><br>
+      </div>
+    </form>
+  </div>
