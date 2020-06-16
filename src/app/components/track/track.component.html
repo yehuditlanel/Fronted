@@ -1,1 +1,12 @@
-<p>track works!</p>
+<br><br>
+
+<ul  class="container list-group">
+    <li  *ngFor="let item of tracks" style="background-color: gray;"class="row mb-3    border border-secondary border-right-0 border-left-0" > 
+     <span  class="col-2 offset-1  mt-3 mb-3"> שם נהג: {{item.DriverId}}</span>
+     <span  class="col-2   mt-3 mb-3">מספר רכב: {{item.LicensePlate}}</span>
+     <span  class="col-2 offset-1  mt-3 mb-3">תאריך נסיעה: {{item.DateOfTravel|date:'dd/MM/yyyy'}}</span>
+     <span  class="col-2 offset-1 mt-3 mb-3">שעת נסיעה: {{item.HourOfBegin}}</span>
+      <a class="  mt-3 mb-3" routerLink="/tracks" (click)="view(item.TrackCode)" ><mat-icon matTooltip="נוסעים">drive_eta</mat-icon></a>
+
+      </li>
+  </ul>

@@ -20,6 +20,9 @@ deleteCustomer(){
 detailsCustomer(){
   this.router.navigate(['/detailCustomer/:id',this.customer])
 }
+viewTravels(){
+  this.router.navigate(['/travel/',this.customer.Group_s_code])
+}
   ngOnInit() {
   }
 

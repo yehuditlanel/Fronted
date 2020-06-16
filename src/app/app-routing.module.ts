@@ -19,6 +19,7 @@ import { DetialCustomerComponent } from './components/customers/detial-customer/
 import { DetailVehicleComponent } from './components/vehicles/detail-vehicle/detail-vehicle.component';
 import { TrackComponent } from './components/track/track.component';
 import { HomeComponent } from './components/home/home.component';
+import { EditTravelComponent } from './components/travels/edit-travel/edit-travel.component';
 
 const routes: Routes = [
   { path: 'login', component:  LoginComponent},
@@ -36,9 +37,11 @@ const routes: Routes = [
   { path: 'editVehicle/:id',component:EditVehicleComponent},
   { path: 'deleteVehicle/:id',component:DeleteVehicleComponent},
   { path: 'detailVehicle/:id',component:DetailVehicleComponent},
-  {path:'viewP/:id',component:AllPassengersComponent},
+  {path:'viewMap/:id',component:AllPassengersComponent},
   {path:'gg',component:AddTravelComponent},
-  { path: 'travel', component:  AllTravelsComponent},
+  { path: 'travel/:id', component:  AllTravelsComponent},
+  {path:'editTravel/:id',component:EditTravelComponent},
+  { path: 'addTravel', component:  AddTravelComponent},
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/not-found'}
 

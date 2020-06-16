@@ -20,20 +20,20 @@
   <ul  class="container list-group list-group-flush">
     <li  style=" text-align: right" class="row mb-3    border border-secondary border-right-0 border-left-0" > 
       <span  class="offset-1 " ></span>
+      <span  class="col-2  mt-3 mb-3" >שם קבוצה : {{customer.Group_s_name}}</span>
       <span  class="col-2  mt-3 mb-3" >שם לקוח : {{customer.Conected_name}}</span>
       <span  class="col-3   mt-3 mb-3" >טלפון לקוח : {{customer.Conected_phone}}</span>
-      <span  class="col-2  mt-3 mb-3" >שם קבוצה : {{customer.Group_s_name}}</span>
       <span  class="offset-2 " ></span>
       <a class="  mt-3 mb-3"  routerLink="/customers"  (click)="updateCustomer()"><mat-icon matTooltip="עריכה">edit</mat-icon></a> 
       <span  class=" mt-3 mb-3" > | </span>
       <a class="  mt-3 mb-3" routerLink="/customers" (click)="deleteCustomer()" ><mat-icon matTooltip="מחיקה">delete</mat-icon></a>
       <span  class=" mt-3 mb-3" > | </span>
-      <a class="  mt-3 mb-3" routerLink="/customers" (click)="deleteCustomer()" ><mat-icon matTooltip="מסלולים">drive_eta</mat-icon></a>
+      <a class="  mt-3 mb-3" routerLink="/customers" (click)="viewTravels()" ><mat-icon matTooltip="נסיעות">drive_eta</mat-icon></a>
       <!-- <span style="text-align: center;" class="col-4 mt-3 mb-3">
         <a   routerLink="/customers"  (click)="updateCustomer()"><mat-icon matTooltip="עריכה">edit</mat-icon></a> 
         <span> | </span>
         <a  routerLink="/customers" (click)="deleteCustomer()" ><mat-icon matTooltip="מחיקה">delete</mat-icon></a>
-      </span>
-      </li> -->
+      </span>-->
+      </li> 
   </ul>
 </body>

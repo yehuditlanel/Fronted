@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ServerService } from '@app/service/server.service';
+import { Track } from '@app/classes/Track';
 
 @Component({
   selector: 'app-track',
@@ -7,21 +9,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./track.component.css']
 })
 export class TrackComponent implements OnInit {
-  id:string=null;
-  idr:string=null;
-  constructor(private router:ActivatedRoute) { }
+  @Input()travelCode:number;
+  tracks:Track[]=[];
+  constructor(private router:Router,private server:ServerService) { }
 
   ngOnInit() {
-    this.router.params.subscribe(data=>{
-      this.idr=data.idr;
-      this.id=data.id;
-
-    })
-    if(this.idr!=null)
-       alert(this.idr)
-    if(this.id!=null){
-      alert(this.id)}
-
+    this.tracks=[];
+        this.server.getByParmater("Track",this.travelCode).subscribe(data => {
+        this.tracks=data;
+      });
   }
-
+  view(trackCode:number){
+    this.router.navigate(["/viewMap",trackCode])
+  }
 }
