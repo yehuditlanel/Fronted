@@ -47,6 +47,7 @@ import {
   MatDatepickerModule, 
   MatNativeDateModule,
   MatSelectModule,
+  MatProgressSpinnerModule,
   MatSnackBarModule,
   MatRippleModule,
 } from '@angular/material';
@@ -67,7 +68,6 @@ import { AllPassengersComponent } from './components/passengers/all-passengers/a
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import { TrackComponent } from './components/track/track.component'
-// import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './components/home/home.component';
 @NgModule({
@@ -109,15 +109,14 @@ import { HomeComponent } from './components/home/home.component';
     AllPassengersComponent,
     TrackComponent,
     HomeComponent,
-    // HomeComponent,
   ],
   imports: [
     BrowserModule,FormsModule,
     AppRoutingModule,HttpClientModule,
     MatSliderModule,MatIconModule,ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatAutocompleteModule,
-    MatButtonModule,
+    MatAutocompleteModule,MatTableModule,MatSortModule,
+    MatButtonModule,MatSelectModule,MatProgressSpinnerModule,
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
@@ -125,7 +124,7 @@ import { HomeComponent } from './components/home/home.component';
     MatTooltipModule,
     AgmDirectionModule,
     AgmCoreModule.forRoot({
-      apiKey:'AIzaSyCtdh-zFkVW7MUgWFvm9mfUTp4BA0Zd8qw'}) 
+      apiKey:'put your api key'}) 
   ],
   providers: [ServerService,AuthGuard],
   bootstrap: [AppComponent]
