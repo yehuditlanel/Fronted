@@ -15,7 +15,7 @@
       <span  class=" mt-3 mb-3" > | </span>
       <a class="  mt-3 mb-3" routerLink="/drivers" (click)="deleteDriver()" ><mat-icon matTooltip="מחיקה">delete</mat-icon></a>
       <span  class=" mt-3 mb-3" > | </span>
-      <a class="  mt-3 mb-3" routerLink="/drivers" (click)="viewTravels()" ><mat-icon matTooltip="מסלולים">drive_eta</mat-icon></a>
+      <a class="  mt-3 mb-3" routerLink="/track/{{driver.UserId}}"><mat-icon matTooltip="מסלולים">drive_eta</mat-icon></a>
 
       </li>
   </ul>

@@ -10,14 +10,25 @@ import { Track } from '@app/classes/Track';
 })
 export class TrackComponent implements OnInit {
   @Input()travelCode:number;
+  userCode:number;
   tracks:Track[]=[];
-  constructor(private router:Router,private server:ServerService) { }
+  constructor(private router:Router,private route:ActivatedRoute,private server:ServerService) { }
 
   ngOnInit() {
     this.tracks=[];
+    this.route.params.subscribe(params=>{
+      this.userCode=params.id;
+      if(params.id!='-'){
+        this.server.getTrackByUserId('Track',this.userCode).subscribe(data=>{
+          this.tracks=data;
+        })
+        //alert(this.userCode);
+      }
+      else{
         this.server.getByParmater("Track",this.travelCode).subscribe(data => {
-        this.tracks=data;
-      });
+        this.tracks=data;});
+      }
+    })   
   }
   view(trackCode:number){
     this.router.navigate(["/viewMap",trackCode])
