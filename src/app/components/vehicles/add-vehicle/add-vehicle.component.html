@@ -1,6 +1,6 @@
 <!-- Button to open the modal driver form -->
 
-<button mat-fab onclick="document.getElementById('addVehicle').style.display='block'"><mat-icon>add</mat-icon></button>
+<button mat-fab onclick="document.getElementById('addVehicle').style.display='block'"><mat-icon matTooltip="הוספה">add</mat-icon></button>
 
 <!-- The Modal -->
 <div id="addVehicle" class="modal">
@@ -11,18 +11,13 @@
         <span onclick="document.getElementById('addVehicle').style.display='none'"class="close" title="Close Modal">&times;</span>
     </div>
     <div class="container">
-      <label for="LicensePlate"><b> מספר רישוי</b></label><br>
-      <input type="text" placeholder="הכנס  מספר רישוי" name="LicensePlate" [(ngModel)]="newVehicle.License_plate" required>
+      <label for="Description"><b>סוג רכב</b></label><br>
+      <input type="text" placeholder="הכנס סוג רכב " name="Description" [(ngModel)]="newVehicle.Description" required>
       <br>
-      <label for="Type"><b>סוג רכב</b></label><br>
-      <input type="text" placeholder="הכנס סוג רכב " name="Type" [(ngModel)]="newVehicle.Type" required>
+      <label for="Count"><b> מספר מקומות </b></label><br>
+      <input type="text" placeholder="הכנס  מספר מקומות" name="Count" [(ngModel)]="newVehicle.Count" required>
       <br>
-      <label for="SeveralPlaces"><b> מספר מקומות </b></label><br>
-      <input type="text" placeholder="הכנס  מספר מקומות" name="SeveralPlaces" [(ngModel)]="newVehicle.Several_places" required>
       <br>
-      <label for="QuantityOfFuelPerKm"><b> כמות דלק לק"מ</b></label><br>
-      <input type="text" placeholder="הכנס  כמות דלק לק''מ" name="QuantityOfFuelPerKm" [(ngModel)]="newVehicle.Quantity_of_fuel_per_km" required>
-      <br><br>
       <button type="submit" onclick="document.getElementById('addVehicle').style.display='none'">הוסף</button>
       <br><br>
     </div>

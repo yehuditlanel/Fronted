@@ -20,12 +20,17 @@ import { DetailVehicleComponent } from './components/vehicles/detail-vehicle/det
 import { TrackComponent } from './components/track/track.component';
 import { HomeComponent } from './components/home/home.component';
 import { EditTravelComponent } from './components/travels/edit-travel/edit-travel.component';
+import { PassengersComponent } from './components/passengers/passengers/passengers.component';
+import { DeleteTravelComponent } from './components/travels/delete-travel/delete-travel.component';
+import { ViewMapComponent } from './components/passengers/view-map/view-map.component';
+import { Track2Component } from './components/track2/track2.component';
 
 const routes: Routes = [
   { path: 'login', component:  LoginComponent},
   { path:'',component:HomeComponent},
   { path: 'driver/:name', component: DriverComponent },
   { path: 'track/:id', component: TrackComponent },
+  { path: 'tracks/:id', component: Track2Component },
   { path: 'customers', component:  AllCustomersComponent},
   { path: 'edit/:id',component:EditCustomerComponent},
   { path: 'delete:/id',component:DeleteCustomerComponent},
@@ -38,13 +43,14 @@ const routes: Routes = [
   { path: 'deleteVehicle/:id',component:DeleteVehicleComponent},
   { path: 'detailVehicle/:id',component:DetailVehicleComponent},
   {path:'viewMap/:id',component:AllPassengersComponent},
-  {path:'gg',component:AddTravelComponent},
+  // {path:'viewMap/:id',component:ViewMapComponent},
   { path: 'travel/:id', component:  AllTravelsComponent},
   {path:'editTravel/:id',component:EditTravelComponent},
+  { path: 'deleteTravel/:id',component:DeleteTravelComponent},
   { path: 'addTravel', component:  AddTravelComponent},
   {path: 'not-found', component: PageNotFoundComponent},
+  {path:'viewPassengers/:id',component:PassengersComponent},
   {path: '**', redirectTo: '/not-found'}
-
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

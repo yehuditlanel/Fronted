@@ -55,8 +55,6 @@ import { AddTravelComponent } from './components/travels/add-travel/add-travel.c
 import { EditTravelComponent } from './components/travels/edit-travel/edit-travel.component';
 import { AllTravelsComponent } from './components/travels/all-travels/all-travels.component';
 import { DeleteTravelComponent } from './components/travels/delete-travel/delete-travel.component';
-import { DetailTravelComponent } from './components/travels/detail-travel/detail-travel.component';
-import { ListTravelsComponent } from './components/travels/list-travels/list-travels.component';
 import { AddVehicleComponent } from './components/vehicles/add-vehicle/add-vehicle.component';
 import { AllVehicleComponent } from './components/vehicles/all-vehicle/all-vehicle.component';
 import { DeleteVehicleComponent } from './components/vehicles/delete-vehicle/delete-vehicle.component';
@@ -70,6 +68,11 @@ import { AgmDirectionModule } from 'agm-direction';
 import { TrackComponent } from './components/track/track.component'
 import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './components/home/home.component';
+import { PassengersComponent } from './components/passengers/passengers/passengers.component';
+import { OnlyNumberDirective } from './directives/only-number.directive';
+import { ViewMapComponent } from './components/passengers/view-map/view-map.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { Track2Component } from './components/track2/track2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,8 +100,6 @@ import { HomeComponent } from './components/home/home.component';
     EditTravelComponent,
     AllTravelsComponent,
     DeleteTravelComponent,
-    DetailTravelComponent,
-    ListTravelsComponent,
     AddVehicleComponent,
     AllVehicleComponent,
     DeleteVehicleComponent,
@@ -109,6 +110,10 @@ import { HomeComponent } from './components/home/home.component';
     AllPassengersComponent,
     TrackComponent,
     HomeComponent,
+    PassengersComponent,
+    OnlyNumberDirective,
+    ViewMapComponent,
+    Track2Component,
   ],
   imports: [
     BrowserModule,FormsModule,
@@ -116,15 +121,17 @@ import { HomeComponent } from './components/home/home.component';
     MatSliderModule,MatIconModule,ReactiveFormsModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,MatTableModule,MatSortModule,
-    MatButtonModule,MatSelectModule,MatProgressSpinnerModule,
+    MatButtonModule,MatSelectModule,MatProgressSpinnerModule,MatProgressBarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDatepickerModule,
     MatRippleModule,
     AgmCoreModule,
     MatTooltipModule,
     AgmDirectionModule,
     AgmCoreModule.forRoot({
-      apiKey:'put your api key'}) 
+      apiKey:'insert your api key',
+      libraries: ["places"]}) 
   ],
   providers: [ServerService,AuthGuard],
   bootstrap: [AppComponent]

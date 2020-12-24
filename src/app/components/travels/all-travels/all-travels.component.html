@@ -1,8 +1,11 @@
- <mat-form-field style="text-align: right; width: 500px;">
+<br>
+<div style="background-color: white;">
+<mat-form-field style="text-align: right;  width: 500px;">
   <mat-label>חיפוש חופשי</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="חיפוש חופשי">
 </mat-form-field>
-<button mat-fab (click)="addTravel()"><mat-icon>add</mat-icon></button>
+<span class="col-2" > <app-add-travel (addTravel1)="onTravelAdded($event)"></app-add-travel></span>
+<!-- <button mat-fab (click)="addTravel()"><mat-icon>add</mat-icon></button> -->
  <table mat-table [dataSource]="travels" matSort  multiTemplateDataRows class="mat-elevation-z8">
 <ng-container matColumnDef="GroupName">
   <th mat-header-cell *matHeaderCellDef mat-sort-header> שם קבוצה  </th>
@@ -38,7 +41,7 @@
      <a routerLink="/travel" (click)="updateTravel(t)" mat-icon-button>
       <mat-icon   matTooltip="עריכה">edit</mat-icon>
     </a>
-    <button (click)="openDeletionDialog(t)" mat-icon-button>
+    <button (click)="deleteTravel(t)" mat-icon-button>
         <mat-icon matTooltip="מחיקה">delete</mat-icon>
     </button>
   </td>
@@ -64,3 +67,4 @@ class="example-element-row"
 </tr>
 <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
 </table>
+</div>

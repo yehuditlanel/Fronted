@@ -9,6 +9,7 @@ import { Role } from 'src/app/classes/Role';
   styleUrls: ['./add-driver.component.css']
 })
 export class AddDriverComponent implements OnInit {
+  sunday:boolean=true
   newDriver:User;
   @Output() addDrive=new EventEmitter<User>();
   @ViewChild ("driverForm",{static:true})form:NgForm
@@ -21,7 +22,13 @@ export class AddDriverComponent implements OnInit {
       this.form.reset();
       
     }
-
+f(){
+  debugger
+  // document.getElementById("myTime").disabled = false;
+  this.sunday=true
+}
     ngOnInit() {
+      // document.getElementById("myTime").disabled = true;
+
     }
 }

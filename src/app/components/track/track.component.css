@@ -1,0 +1,7 @@
+.container { width: 100%; }
+.row {
+    align-items: center;
+    display: flex;
+     flex-wrap: nowrap;
+    width: 400%;
+}

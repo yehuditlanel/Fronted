@@ -9,16 +9,15 @@ import { ServerService } from 'src/app/service/server.service';
 })
 export class DetailVehicleComponent implements OnInit {
   constructor(private server:ServerService,private route:ActivatedRoute,private router:Router) {}
-  vehicle:Vehicle=new Vehicle("","",null,null);
+  vehicle:Vehicle=new Vehicle(null,null,null);
   
   
     ngOnInit() {
       this.route.params.subscribe(
         params=>{
-          this.vehicle.License_plate=params.License_plate
-          this.vehicle.Type=params.Type
-          this.vehicle.Several_places=params.Several_places
-          this.vehicle.Quantity_of_fuel_per_km=params.Quantity_of_fuel_per_km
+          this.vehicle.Code=params.Code
+          this.vehicle.Description=params.Description
+          this.vehicle.Count=params.Count
         }
       )
     }

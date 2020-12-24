@@ -4,11 +4,11 @@ import { ServerService } from '@app/service/server.service';
 import { Track } from '@app/classes/Track';
 
 @Component({
-  selector: 'app-track',
-  templateUrl: './track.component.html',
-  styleUrls: ['./track.component.css']
+  selector: 'app-track2',
+  templateUrl: './track2.component.html',
+  styleUrls: ['./track2.component.css']
 })
-export class TrackComponent implements OnInit {
+export class Track2Component implements OnInit {
   @Input()travelCode:number;
   userCode:number;
   tracks:Track[]=[];
@@ -45,3 +45,4 @@ export class TrackComponent implements OnInit {
   }
 
 }
+

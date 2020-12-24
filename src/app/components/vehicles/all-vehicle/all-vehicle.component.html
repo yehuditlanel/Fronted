@@ -8,9 +8,15 @@
       </div>
     </div>
     <!-- <span class="col-10"><input  placeholder="חיפוש"  [(ngModel)]="searchText" class="form-control container body-content"></span> -->
+   
     <span class="col-2" >  <app-add-vehicle   (addVehicle)="onVehicleAdded($event)"></app-add-vehicle></span>
   </div>
     <br>
+    <div class="row ">
+      <span class="offset-1 col-1"></span>
+      <span class=" col-2" align ="center" >סוג רכב</span>
+      <span class="col-2" >מספר מקומות ברכב</span>
+   </div>
     <app-list-vehicle  *ngFor="let item of vehicles" [vehicle]="item"></app-list-vehicle>
     
 </body>‏

@@ -42,18 +42,30 @@ export class AllTravelsComponent implements OnInit {
   }
   });
   }
-  
+  date:Date;
+  // travel1:Travel= new Travel(1,'ee','rrr','uuu','89','ii',this.date,this.date,0,0);
+  onTravelAdded(data1:Travel){
+    // new Travel(data.TravelCode,data.GroupName,data.CollectionOrDispersing,data.DestinationOrSource,data.Hour,data.Frequency,data.DateOfBegin,data.DateOfEnd)
+    // this.travels.push(new MatTableDataSource(data));
+    // this.travels.push(new MatTableDataSource(this.travel1));
+    debugger
+    this.travels.data.push(data1);
+// (this.travels as object).push
+  }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.travels.filter = filterValue.trim().toLowerCase();
   }
   addTravel(){
     this.router.navigate(['/addTravel']);
-    // alert('add travel')
   }
   updateTravel(travel:Travel){
     console.log(travel);
     this.router.navigate(["/editTravel/:id",travel]);
 
+  }
+  deleteTravel(travel:Travel){
+    console.log(travel)
+    this.router.navigate(["/deleteTravel/:id",travel]);
   }
 }

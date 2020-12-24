@@ -1,6 +1,7 @@
 <br>
 <form (ngSubmit)="onSubmitForm()" #loginForm="ngForm" class="text-center  from-horizontal">
-    <label>
+   <br>
+  <label>
       שם משתמש
       <br>
       <mat-form-field>
@@ -16,7 +17,7 @@
       <br>
       <mat-form-field >
       <mat-label align="center">הכנס סיסמה</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="myUser.UserId" name="password" required>
+      <input OnlyNumber="true" maxlength="9" matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="myUser.UserId" name="password" required>
       <button class="outline" type="button" mat-icon-button matPrefix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>

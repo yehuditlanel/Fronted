@@ -7,6 +7,10 @@
       <img width="250"  alt="Angular Logo" src="../assets/images/logo.png">
       <li class="nav-item">
         <br>
+        <a class="nav-link" [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">אודות</a>
+      </li>
+      <li class="nav-item">
+        <br>
         <a class="nav-link" [routerLink]="['/customers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">לקוחות</a>
       </li>
       <li class="nav-item">
@@ -21,10 +25,10 @@
           <br>
             <a class="nav-link" [routerLink]="['/travel/-']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">נסיעות</a>
           </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <button class="login" [routerLink]="['/login']"><mat-icon >account_circle</mat-icon><span>כניסה</span>
           </button>
-        </li>
+        </li> -->
         <div class="dropdown" dir="ltr">
          <br>
           <!--Trigger-->
@@ -37,43 +41,15 @@
             <a class="dropdown-item" href="/customers">לקוחות</a>
             <a class="dropdown-item" href="/drivers">נהגים</a>
             <a class="dropdown-item" href="/vehicles">רכבים</a>
-            <a class="dropdown-item" href="/travel">נסיעות</a>
+            <a class="dropdown-item" href="/travel/-">נסיעות</a>
           </span>
         </div>‏
     </ul>
     <br>
-     <br><br><br>
-    <router-outlet ></router-outlet>
+  <p class="img1" style="background-image: opacity= 30%;">
+    <br><br><br>
+    <router-outlet></router-outlet>
     <br><br>
+  </p>
     <footer  class="fixed-bottom"><mat-icon>copyright</mat-icon> Rachel Hacker <span style="color: #ffc107;">&</span> Yehudit Lanel</footer>
 </form>
-
-
-<!-- <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="direction: rtl;"> 
-    <img width="250"  alt="Angular Logo" src="../assets/images/logo.png">
-    <div class="collapse navbar-collapse">
-        
-        <ul class="navbar-nav mr-auto">
-           
-            <li class="nav-item">
-                <br>
-                <a class="nav-link" [routerLink]="['/customers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">לקוחות</a>
-              </li>
-              <li class="nav-item">
-                  <br>
-                    <a class="nav-link"  [routerLink]="['/drivers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">נהגים</a>
-                  </li>
-                  <li class="nav-item">
-                      <br>
-                        <a  class="nav-link" [routerLink]="['/vehicles']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">רכבים</a>
-                      </li>
-                      <li class="nav-item">
-                          <br>
-                            <a class="nav-link" [routerLink]="['/travel']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">נסיעות</a>
-                          </li>
-        </ul> 
-    </div> 
-    <button class="navbar-toggler">
-        <span class="navbar-toggler-icon"></span> 
-    </button> 
-</nav> -->

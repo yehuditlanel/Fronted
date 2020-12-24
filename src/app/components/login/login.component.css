@@ -20,3 +20,7 @@
   .outline{
     outline: none;
   }
+  form{
+    background-color: white;
+    height: 350px;
+  }

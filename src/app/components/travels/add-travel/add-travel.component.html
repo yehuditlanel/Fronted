@@ -1,18 +1,28 @@
-<div id="addTravel" >
-    <form [formGroup]="form"(ngSubmit)="onSubmitForm(form.value)" align="center">
-      <div>
-        <h4>הוספת נסיעה</h4>
-        <span onclick="document.getElementById('addTravel').style.display='none'" class="close"></span>
+<button mat-fab onclick="document.getElementById('addTravel').style.display='block'"><mat-icon matTooltip="הוספה">add</mat-icon></button>‏
+<!-- <p class = "spinner_container"> -->
+  <!-- <mat-progress-bar *ngIf="load"
+[mode]="'indeterminate'">
+</mat-progress-bar> -->
+<!-- </p> -->
+<div class="  disable-background" *ngIf="load"><mat-spinner class="spinner_container" ></mat-spinner></div>
+
+
+<div id="addTravel"  class="modal" >
+  <form class="modal-content animate" action="/action_page.php" [formGroup]="form"(ngSubmit)="onSubmitForm(form.value)" align="center">
+
+  <!-- <form class="modal-content animate" action="/action_page.php" (ngSubmit)="onSubmitForm()" #driverForm="ngForm" align="center"> -->
+    <!-- <form [formGroup]="form"(ngSubmit)="onSubmitForm(form.value)" align="center"> -->
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">הוספת נסיעה</h4>
+        <span onclick="document.getElementById('addTravel').style.display='none'" class="close"title="Close Modal">&times;</span>
       </div>
       <div class="container">
-        <!-- <label><b>שם קבוצה</b></label><br>
-        <input type="text" placeholder="הכנס שם קבוצה" formControlName= "GroupName" required>
-        <br> -->
         <label><b>הכנס שם קבוצה*</b></label><br>
         <mat-form-field style="text-align: right; direction: rtl;"required> 
           <mat-select placeholder="בחירה" formControlName= "GroupName" >
             <mat-option *ngFor="let g of groupNames" [value]="g">{{g}}</mat-option>
           </mat-select>
+          <mat-error *ngIf="hasError('GroupName', 'required')">נא לבחור קבוצה</mat-error>
         </mat-form-field>
         <br>
         <label><b>הכנס סוג נסיעה*</b></label><br>
@@ -20,30 +30,56 @@
           <mat-select placeholder="בחירה" formControlName= "CollectionOrDispersing" >
             <mat-option *ngFor="let c of colordis" [value]="c">{{c}}</mat-option>
           </mat-select>
+          <mat-error *ngIf="hasError('CollectionOrDispersing', 'required')">נא לבחור סוג נסיעה</mat-error>
         </mat-form-field>
         <br>
         <label><b> כתובת מקור/יעד </b></label><br>
-        <input type="text" placeholder="הכנס  כתובת מקור/יעד" formControlName= "DestinationOrSource" required>
-        <br>
+          <mat-form-field style="text-align: right; direction: rtl; ">
+          <input matInput placeholder="חיפוש כתובת" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search formControlName= "searchControl" style="width:400px;">
+          <mat-icon matSuffix >location_on </mat-icon>
+          <mat-error *ngIf="hasError('searchControl', 'required')">זהו שדה חובה!</mat-error>
+        </mat-form-field><br>
+          <!-- <div class="form-group" align="center">
+          <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search formControlName= "searchControl" style="width:400px;">
+        </div> -->
         <label><b>  שעת סיום מסלול</b></label><br>
-        <input type="text" placeholder="הכנס שעת הגעה לסוף המסלול" formControlName= "Hour" required>
+        <mat-form-field style="text-align: right; direction: rtl; ">
+        <input type="time" matInput formControlName= "Hour" required>
+        <mat-error *ngIf="hasError('Hour', 'required')">זהו שדה חובה!</mat-error>
+      </mat-form-field>
         <br>
         <br>
-        <input type="file" accept=".xlsx" formControlName= "filePath" required>
+        <label><b>בחר ימי נסיעה</b></label><br>
+        <mat-form-field style="text-align: right; direction: rtl; ">
+          <mat-select formControlName="dayList" style="height: 0.5cm;" placeholder="בחירה" multiple>
+            <mat-option *ngFor="let topping of days" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="hasError('dayList', 'required')">נא לבחור לפחות יום נסיעה אחד!</mat-error>
+        </mat-form-field>
+        <br>
+        <br>
+        <input type='file' placeholder='העלאת קובץ אקסל'  accept=".xls,.xlsm,.xlsx" (change)="onSubmit($event)">
+        <!-- <input type="file" accept=".xlsx" formControlName= "filePath" required> -->
         <br>
         <br>
         <label><b> תאריך התחלה</b></label><br>
-        <input type="date" placeholder="הכנס תאריך התחלת הנסיעה" formControlName= "DateOfBegin" required>
-        <br>
+        <mat-form-field style="text-align: right; direction: rtl; ">
+        <input matInput type="date" placeholder="הכנס תאריך התחלת הנסיעה" formControlName= "DateOfBegin" required>
+        <mat-error *ngIf="hasError('DateOfBegin', 'required')">זהו שדה חובה!</mat-error>
+      </mat-form-field> <br>
         <br>
         <label><b> תאריך סיום</b></label><br>
-        <input type="date" placeholder="הכנס תאריך סיום הנסיעה" formControlName= "DateOfEnd" required>
+        <mat-form-field style="text-align: right; direction: rtl; ">
+        <input matInput type="date" placeholder="הכנס תאריך סיום הנסיעה" formControlName= "DateOfEnd" required>
+        <mat-error *ngIf="hasError('DateOfEnd', 'required')">זהו שדה חובה!</mat-error>
+      </mat-form-field> <br>
         <br>
-        <br>
-        <button type="submit" onclick="document.getElementById('addTravel').style.display='none'">הוסף</button><br>
-        <br>
+       
+        <button type="submit" mat-stroked-button [disabled]="form.invalid" onclick="document.getElementById('addTravel').style.display='none'">הוסף</button><br>
+        <br><br>
       </div>
     </form>
+    
   </div>
 
   <!-- בשביל העלאת קובץ אקסל -->

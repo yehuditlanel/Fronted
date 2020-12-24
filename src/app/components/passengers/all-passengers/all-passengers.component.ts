@@ -33,8 +33,8 @@ export class AllPassengersComponent implements OnInit {
     this.ps.getByParmater1("Passenger",this.trackCode).subscribe(data=>{
       this.passengers=data;
       for(var i = 0; i < this.passengers.length; i++) {
-        this.addresses.push(this.passengers[i].PassengerAddress);
-        this.findLocation(this.passengers[i].PassengerAddress,i);
+        this.addresses.push(this.passengers[i].Address);
+        this.findLocation(this.passengers[i].Address,i);
       }
       console.log(this.addresses);
     console.log(this.passengers);});   

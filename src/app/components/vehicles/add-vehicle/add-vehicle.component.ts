@@ -20,7 +20,7 @@ export class AddVehicleComponent implements OnInit {
       this.form.reset();
       
     }
-    constructor(private server:ServerService) { this.newVehicle= new Vehicle("","",null,null); }
+    constructor(private server:ServerService) { this.newVehicle= new Vehicle(null,null,null); }
   
     ngOnInit() {
     }

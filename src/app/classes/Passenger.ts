@@ -1,9 +1,13 @@
 export class Passenger{
     PassengerCode:number;
-    PassengerName:string;
-    PassengerAddress:string;
-    constructor( PassengerName:string,PassengerAddress:string){
-        this.PassengerName=PassengerName;
-        this.PassengerAddress=PassengerAddress
+    Name:string;
+    Address:string;
+    Latitude:number;
+    Longitude:number;
+    constructor( PassengerName:string,PassengerAddress:string,Latitude:number,Longitude:number){
+        this.Name=PassengerName;
+        this.Address=PassengerAddress;
+        this.Latitude=Latitude;
+        this.Longitude=Longitude
     }
 }

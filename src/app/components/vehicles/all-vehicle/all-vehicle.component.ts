@@ -25,6 +25,6 @@ export class AllVehicleComponent implements OnInit {
      // this.router.navigateByUrl(['/vehicles',this.vehicles[i]])
   }
   onVehicleAdded(data:Vehicle){
-    this.vehicles.push(new Vehicle(data.License_plate,data.Type,data.Several_places,data.Quantity_of_fuel_per_km));
+    this.vehicles.push(new Vehicle(data.Code,data.Count,data.Description));
   }
 }

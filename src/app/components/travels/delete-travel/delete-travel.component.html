@@ -1,1 +1,22 @@
-<p>delete-travel works!</p>
+<div class="modal" id="deleteTravel" align="center">
+    <form class="modal-content animate"action="/action_page.php" (ngSubmit)="onSubmitForm()">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">מחיקת נסיעה</h4>
+        <span (click)="cancel()" onclick="document.getElementById('deleteTravel').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+      <div>האם אתה בטוח רוצה למחוק את הנסיעה לצמיתות?</div>
+      <div class="container">
+        <label for="conectedName"><b>  שם קבוצה  </b></label><br>
+        {{travel.GroupName}}
+        <br>
+        <label for="conectedPhone"><b>סוג נסיעה</b></label><br>
+        {{travel.CollectionOrDispersing}}
+        <br>
+        <label for="group_s_name"><b>כתובת:</b></label><br>
+        {{travel.DestinationOrSource}}
+        <br><br>
+        <button (click)="onSubmitForm()" type="submit">אישור</button>
+        <br><br>
+      </div>
+    </form>
+  </div>  

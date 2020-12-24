@@ -5,17 +5,12 @@
           <span (click)="cancel()"  onclick="document.getElementById('editVehicle').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <div class="container">
-        <label for="LicensePlate"><b> מספר רישוי</b></label><br>
-        <input type="text" name="LicensePlate" [(ngModel)]="vehicle.License_plate" required>
+        
+        <label for="Description"><b>סוג רכב</b></label><br>
+        <input  name="Description" [(ngModel)]="vehicle.Description" >
         <br>
-        <label for="Type"><b>סוג רכב</b></label><br>
-        <input  name="Type" [(ngModel)]="vehicle.Type" >
-        <br>
-        <label for="Several_places"><b>  מספר מקומות</b></label><br>
-        <input   name="Several_places" [(ngModel)]="vehicle.Several_places" required>
-        <br>
-        <label for="Quantity_of_fuel_per_km"><b>כמות דלק לק"מ</b></label><br>
-        <input  name="Quantity_of_fuel_per_km" [(ngModel)]="vehicle.Quantity_of_fuel_per_km" >
+        <label for="Count"><b>  מספר מקומות</b></label><br>
+        <input   name="Count" [(ngModel)]="vehicle.Count" required>
         <br><br>
         <button type="submit" > אישור</button><br><br>
       </div>

@@ -9,7 +9,9 @@ export class Travel{
     Frequency:string;
     DateOfBegin:Date;
     DateOfEnd:Date;
-    constructor(travelCode:number,GroupName:string,collectionOrDispersing:string,destinationOrSource:string,hour:string,frequency:string,dateOfBegin:Date,dateOfEnd:Date){
+    Latitude:number;
+    Longitude:number;
+    constructor(travelCode:number,GroupName:string,collectionOrDispersing:string,destinationOrSource:string,hour:string,frequency:string,dateOfBegin:Date,dateOfEnd:Date, Latitude:number,Longitude:number){
        this.TravelCode=travelCode;
        this.GroupName=GroupName;
        this.CollectionOrDispersing=collectionOrDispersing;
@@ -18,6 +20,8 @@ export class Travel{
        this.Frequency=frequency;
        this.DateOfBegin=dateOfBegin;
        this.DateOfEnd=dateOfEnd;
+       this.Latitude=Latitude;
+       this.Longitude=Longitude;
 
 }
 }

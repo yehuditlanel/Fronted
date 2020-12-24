@@ -7,18 +7,12 @@
     </div>
     <div>האם אתה בטוח רוצה למחוק את הרכב לצמיתות?</div>
     <div class="container">
-      <label for="LicensePlate"><b> מספר רישוי</b></label><br>
-      {{vehicle.License_plate}}
+      <label for="Description"><b>סוג רכב</b></label><br>
+      {{vehicle.Description}}
       <br>
-      <label for="Type"><b>סוג רכב</b></label><br>
-      {{vehicle.Type}}
+      <label for="Count"><b>  מספר מקומות  </b></label><br>
+      {{vehicle.Count}}
       <br>
-      <label for="Several_places"><b>  מספר מקומות  </b></label><br>
-      {{vehicle.Several_places}}
-      <br>
-      <label for="Quantity_of_fuel_per_km"><b>כמות דלק לק"מ</b></label><br>
-      {{vehicle.Quantity_of_fuel_per_km}}
-      <br><br>
       <button  (click)="onSubmitForm()" type="submit" > אישור</button> 
       <br><br>   
     </div>

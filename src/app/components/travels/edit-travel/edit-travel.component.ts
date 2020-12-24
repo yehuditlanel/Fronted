@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./edit-travel.component.css']
 })
 export class EditTravelComponent implements OnInit {
-  travel:Travel=new Travel(null,null,null,null,null,null,null,null);
+  travel:Travel=new Travel(null,null,null,null,null,null,null,null,null,null);
 
   constructor(private route:ActivatedRoute,private server:ServerService,private location:Location) { }
 
