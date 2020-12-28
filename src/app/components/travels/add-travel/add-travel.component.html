@@ -33,7 +33,7 @@
           <mat-error *ngIf="hasError('CollectionOrDispersing', 'required')">נא לבחור סוג נסיעה</mat-error>
         </mat-form-field>
         <br>
-        <label><b> כתובת מקור/יעד </b></label><br>
+        <label><b> כתובת יעד </b></label><br>
           <mat-form-field style="text-align: right; direction: rtl; ">
           <input matInput placeholder="חיפוש כתובת" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search formControlName= "searchControl" style="width:400px;">
           <mat-icon matSuffix >location_on </mat-icon>
@@ -58,7 +58,7 @@
         </mat-form-field>
         <br>
         <br>
-        <input type='file' placeholder='העלאת קובץ אקסל'  accept=".xls,.xlsm,.xlsx" (change)="onSubmit($event)">
+        <input type='file' placeholder='העלאת קובץ אקסל' #myInput accept=".xls,.xlsm,.xlsx" (change)="onSubmit($event)" required>
         <!-- <input type="file" accept=".xlsx" formControlName= "filePath" required> -->
         <br>
         <br>

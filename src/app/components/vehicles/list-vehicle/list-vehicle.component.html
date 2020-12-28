@@ -6,11 +6,11 @@
         <span  class=" col-1 offset-1  mt-3 mb-3" >{{vehicle.Count}}</span>
         <span style="text-align: center;" class="col-6 mt-3 mb-3">
           <!-- ??? -->
-          <a class="text" routerLink="/vehicles"  (click)="updateVehicle()">עריכה</a> 
+          <a class="text" routerLink="/vehicles"  (click)="updateVehicle()"><mat-icon matTooltip="עריכה">edit</mat-icon></a> 
           <span > | </span>
-          <a class="text"  routerLink="/vehicles" (click)="deleteVehicle()" >מחיקה</a>
-          <span > | </span>
-          <a class="text"  routerLink="/vehicles" (click)="detialVehicle()" >פרטים</a>
+          <a class="text"  routerLink="/vehicles" (click)="deleteVehicle()" ><mat-icon matTooltip="מחיקה">delete</mat-icon></a>
+          <!-- <span > | </span>
+          <a class="text"  routerLink="/vehicles" (click)="detialVehicle()" >פרטים</a> -->
         </span>
         </li>
     </ul>

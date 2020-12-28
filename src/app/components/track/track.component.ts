@@ -29,7 +29,9 @@ export class TrackComponent implements OnInit {
       // }
       // else{
         this.server.getByParmater("Track",this.travelCode).subscribe(data => {
-        this.tracks=data;});
+        this.tracks=data;
+        console.log(this.tracks)
+      });
       // }
     })   
   }

@@ -14,15 +14,15 @@ export class DriverComponent implements OnInit {
   tracks:Track[];
   id:string;
     ngOnInit() {
-     this.id=localStorage.getItem("currentUser");
-     this.ds.getTrackByUserId("Track",Number(this.id)).subscribe(data=>
-      {
-        this.tracks=data;
-        console.log(this.tracks)
-      });
-      this.route.params.subscribe(
-        params=>{
-          this.nameOfUser=params.name;
-      });
+    //  this.id=localStorage.getItem("currentUser");
+    //  this.ds.getTrackByUserId("Track",Number(this.id)).subscribe(data=>
+    //   {
+    //     this.tracks=data;
+    //     console.log(this.tracks)
+    //   });
+    //   this.route.params.subscribe(
+    //     params=>{
+    //       this.nameOfUser=params.name;
+    //   });
   }
 }

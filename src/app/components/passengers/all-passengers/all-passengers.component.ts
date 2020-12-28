@@ -4,6 +4,7 @@ import { ServerService } from 'src/app/service/server.service';
 import { ActivatedRoute } from '@angular/router';
 import { marker } from 'src/app/classes/marker';
 import {Observable} from 'rxjs'
+import { Travel } from '@app/classes/Travel';
 
 @Component({
   selector: 'app-all-passengers',
@@ -23,6 +24,7 @@ export class AllPassengersComponent implements OnInit {
   origin
   destination
   waypoints = []  
+  travel:Travel;
   constructor(private ps:ServerService,private route:ActivatedRoute) {
    }
   ngOnInit() {
@@ -30,6 +32,10 @@ export class AllPassengersComponent implements OnInit {
     this.addresses=[];
     this.route.params.subscribe(params=>
       this.trackCode=params.id)
+      this.ps.getDestinationAddress("Track",this.trackCode).subscribe(data=>{
+        this.travel=data;
+        this.findLocation(this.travel.DestinationOrSource,-1);
+      })
     this.ps.getByParmater1("Passenger",this.trackCode).subscribe(data=>{
       this.passengers=data;
       for(var i = 0; i < this.passengers.length; i++) {
@@ -51,9 +57,9 @@ export class AllPassengersComponent implements OnInit {
      var someObj = {location:{lat:this.result.lat,lng:this.result.lng}}
      if(i==0){
        this.origin=someObj;
-       this.destination=someObj
+      //  this.destination=someObj
      }
-     else if(i==this.passengers.length-1){
+     else if(i==-1){
        this.destination=someObj
      }
      else{

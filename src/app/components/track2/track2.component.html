@@ -7,10 +7,11 @@
      <span  class="col-2   mt-3 mb-3">מספר רכב: {{item.LicensePlate}}</span>
      <span  class="col-2 offset-1  mt-3 mb-3">תאריך נסיעה: {{item.DateOfTravel|date:'dd/MM/yyyy'}}</span>
      <span  class="col-2 offset-1 mt-3 mb-3">שעת נסיעה: {{item.HourOfBegin}}</span> -->
-     <span class="col-3    mt-3 mb-3d-flex">נסיעה {{i+1}} </span>
+     <span class="offset-1  mt-3 mb-3d-flex">מסלול {{i+1}} </span>
+     <span class="mt-3 mb-3d-flex offset-1">תאור: {{item.Type}}</span>
      <!-- <span></span> -->
       <!-- <a class="  mt-3 mb-3" routerLink="/tracks" (click)="view(item.TrackCode)" ><mat-icon matTooltip="נוסעים">drive_eta</mat-icon></a> -->
-        <button  class="col-4 offset-1   mt-3 mb-3 "(click)="viewPassengers(item.TrackCode)"> רשימת נוסעים</button>
-        <button  class="col-4   mt-3 mb-3" (click)="viewMap(item.TrackCode)">הצג מפה</button>
+        <button  class="col-3 offset-1   mt-3 mb-3 "(click)="viewPassengers(item.TrackCode)"> רשימת נוסעים</button>
+        <button  class="col-3   mt-3 mb-3" (click)="viewMap(item.TrackCode)">הצג מפה</button>
            </li>
   </ul>

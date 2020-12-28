@@ -39,8 +39,8 @@ export class ServerService {
   updateObject(url:string,object:any){
       this.server.put(this.path+url,object).subscribe();
     }
-  getTrackByUserId(url:string,userId:number){
-    return this.server.get<any[]>(this.path+url+'/GetTrackByDriverId?userId='+userId)
+  getDestinationAddress(url:string,userId:number){
+    return this.server.get<any>(this.path+url+'/GetTrackByDriverId?userId='+userId)
   }
   getTravelByGroupCode(url:string,p:number){
     return this.server.get<any[]>(this.path+url+'?'+"groupCode="+p)

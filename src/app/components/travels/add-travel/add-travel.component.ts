@@ -15,6 +15,8 @@ import { Router } from '@angular/router';
 })
 export class AddTravelComponent implements OnInit {
   searchControl: FormControl;
+  @ViewChild('myInput',{static:true})
+  myInputVariable: ElementRef;
   @Output() addTravel1=new EventEmitter<Travel>();
    @ViewChild("search",{static:true})
   public searchElementRef: ElementRef;
@@ -115,7 +117,17 @@ dayslist:string="";
  
   // בעת בחירת קובץ נוסעים
   onSubmit(fileInput: any){
-    this.formData.append("file", <File>fileInput.target.files[0],);
+    var fileName=<File>fileInput.target.files[0].name;
+    var extentionFile = fileName.substr(fileName.lastIndexOf('.'));
+    if(extentionFile==".xls"||extentionFile==".xlsm"||extentionFile==".xlsx")
+    {
+      this.formData.append("file", <File>fileInput.target.files[0],);
+    }
+    else{
+      debugger;
+      this.myInputVariable.nativeElement.value = "";
+    }
+    // this.formData.append("file", <File>fileInput.target.files[0],);
   }
   private setCurrentPosition() {
     if ("geolocation" in navigator) {
